@@ -305,7 +305,7 @@ def translate():
     translated_result = None
     try:
         # Only call DeepL if there is something non-empty (and key is present)
-        if DEEPL_API_KEY and placeholder_text.strip():
+        if DEEPL_API_KEY and placeholder_text.strip() and not had_hits:
             translated_result = call_deepl(placeholder_text, src, tgt)
         else:
             translated_result = None
