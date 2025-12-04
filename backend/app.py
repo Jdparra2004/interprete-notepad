@@ -265,33 +265,39 @@ def translate():
     if not payload or "text" not in payload:
         return jsonify({"error": "Missing 'text' in JSON body."}), 400
 
-    # Normalize text
+    # Normalize Spanish text
     text = normalize_spanish(payload.get("text", ""))
 
     # Detect language
     src = detect_language_simple(text)
     tgt = "en" if src == "es" else "es"
+    logger.info("Detected source language: %s | Target language: %s", src, tgt)
 
-    # Apply glossary (priority)
+    # Apply glossary placeholders (priority)
     placeholder_text, placeholder_map, had_hits = apply_glossary_placeholders(text, src)
 
-    # Decide DeepL usage
+    # Initialize translated result
     translated_with_placeholders = placeholder_text
+
+    # Call DeepL only if API key exists and there is text to translate
     if DEEPL_API_KEY and placeholder_text.strip():
         try:
+            # Log info
             logger.info("Calling DeepL API...")
+            # Only send text that has no glossary placeholders
+            # DeepL will skip placeholders like <<<GL0>>> automatically
             translated_with_placeholders = call_deepl(
                 placeholder_text,
                 src,
                 tgt
             )
         except Exception as e:
-            logger.warning("DeepL failed, fallback to glossary-only: %s", e)
+            logger.warning("DeepL API failed. Fallback to glossary-only: %s", e)
 
-    # Restore glossary placeholders
+    # Reconstruct glossary placeholders into final text
     final_text = reconstruct_text(translated_with_placeholders, placeholder_map)
 
-    # Cleanup
+    # Final cleanup: collapse multiple spaces, fix spaces before punctuation
     final_text = re.sub(r"\s+([,.;:!?])", r"\1", final_text)
     final_text = re.sub(r"\s{2,}", " ", final_text).strip()
 
@@ -299,6 +305,7 @@ def translate():
         "translated_text": final_text,
         "detected_source": src
     }), 200
+
 
 
 # ---- Run (when executed directly) ----
