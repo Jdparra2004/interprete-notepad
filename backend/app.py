@@ -18,6 +18,7 @@ import re
 import sqlite3
 import requests
 import logging
+from utils import normalize_spanish
 
 # ---- Configuration / Defaults ----
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -286,8 +287,10 @@ def translate():
     
     if not payload or "text" not in payload:
         return jsonify({"error": "Missing 'text' in JSON body."}), 400
+    #Reemplazo para normalizar el texto en español
     text = payload.get("text", "")
-    text = text.strip()
+    text = normalize_spanish(text)
+
     # detect language
     detected = detect_language_simple(text)
     src = detected
