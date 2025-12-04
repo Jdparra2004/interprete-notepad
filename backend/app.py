@@ -271,7 +271,6 @@ def health_check():
 
 from flask import request, jsonify
 
-
 @app.route("/health", methods=["GET"])
 def health():
     return jsonify({"status": "ok", "backend": "interprete-notepad", "glossary_entries": len(GLOSSARY)}), 200
@@ -300,9 +299,25 @@ def translate():
     # apply glossary replacements => placeholders + map
     placeholder_text, placeholder_map, had_hits = apply_glossary_placeholders(text, src)
 
-    # Decide if we need to call DeepL
+        # Decide if we need to call DeepL
     # If placeholder_text == text and no placeholders were applied -> we still may want to call DeepL
     # If placeholder_text contains placeholders, DeepL will usually keep placeholders intact, so safe to send.
+    
+    #Parte de la API
+    from utils import call_deepl
+    from config import DEEPL_API_KEY
+
+    if DEEPL_API_KEY:
+        translated_result = call_deepl(
+            placeholder_text,
+            src,
+            tgt,
+            DEEPL_API_KEY
+        )
+    else:
+        translated_result = placeholder_text
+    
+    #sección traducción
     translated_result = None
     try:
         # Only call DeepL if there is something non-empty (and key is present)
