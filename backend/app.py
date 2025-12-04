@@ -305,7 +305,11 @@ def health():
 
 @app.route("/translate", methods=["POST"])
 def translate():
-    payload = request.get_json(silent=True)
+    payload = request.get_json(force=True)
+    
+    logger.info("RAW DATA: %s", request.data)
+    logger.info("PARSED JSON: %s", payload)
+    
     if not payload or "text" not in payload:
         return jsonify({"error": "Missing 'text' in JSON body."}), 400
     text = payload.get("text", "")
