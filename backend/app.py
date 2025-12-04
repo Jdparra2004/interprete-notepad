@@ -84,26 +84,7 @@ def detect_language_simple(text: str) -> str:
 #   { "term_es": "...", "term_en": "...", "acronym": "..." }
 def load_glossary() -> list:
     entries = []
-    # If sqlite DB exists, load from it
-    if os.path.exists(GLOSSARY_DB_PATH):
-        try:
-            conn = sqlite3.connect(GLOSSARY_DB_PATH)
-            cur = conn.cursor()
-            cur.execute("SELECT term_es, term_en, acronym FROM glossary")
-            rows = cur.fetchall()
-            for r in rows:
-                entries.append({
-                    "term_es": (r[0] or "").strip(),
-                    "term_en": (r[1] or "").strip(),
-                    "acronym": (r[2] or "").strip() if r[2] else None
-                })
-            conn.close()
-            logger.info("Loaded %d glossary entries from sqlite db.", len(entries))
-            return entries
-        except Exception as e:
-            logger.warning("Could not read glossary.db (%s); falling back to glossary.json. Error: %s", GLOSSARY_DB_PATH, e)
-
-    # fallback: load from glossary.json if exists
+    # fallback: load from glossary.json
     if os.path.exists(GLOSSARY_JSON_PATH):
         try:
             with open(GLOSSARY_JSON_PATH, "r", encoding="utf-8") as f:
