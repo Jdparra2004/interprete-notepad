@@ -90,3 +90,21 @@ def reconstruct_text(text: str, placeholder_map: dict) -> str:
         text = text.replace(placeholder, final_value)
     return text
 
+#Call DeepL API
+import requests
+
+def call_deepl(text, source_lang, target_lang, api_key):
+    url = "https://api-free.deepl.com/v2/translate"
+    
+    data = {
+        "auth_key": api_key,
+        "text": text,
+        "source_lang": source_lang.upper(),
+        "target_lang": target_lang.upper(),
+        "preserve_formatting": True
+    }
+
+    r = requests.post(url, data=data, timeout=10)
+    r.raise_for_status()
+    
+    return r.json()["translations"][0]["text"]
