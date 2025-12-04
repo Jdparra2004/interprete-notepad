@@ -1,12 +1,12 @@
-{
-    "Intravenosa": {
-        "es": "intravenosa",
-        "en": "intravenous",
+[
+    {
+        "term_es": "vía intravenosa",
+        "term_en": "intravenous",
         "acronym": "IV"
     },
-    "Presión arterial": {
-        "es": "presión arterial",
-        "en": "blood pressure",
-        "acronym": "BP"
+    {
+        "term_es": "intramuscular",
+        "term_en": "intramuscular",
+        "acronym": "IM"
     }
-}
+]
