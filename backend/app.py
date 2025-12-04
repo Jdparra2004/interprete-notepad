@@ -50,34 +50,46 @@ PORT = int(CONFIG.get("PORT", DEFAULT_PORT))
 # ---- Utilities: language detection (simple deterministic) ----
 def detect_language_simple(text: str) -> str:
     """
-    Returns 'es' or 'en'. Heuristic:
-    - Presence of accented characters or 'ñ' strongly suggests Spanish.
-    - Presence of many common English words suggests English.
-    - Fallback to Spanish for empty or ambiguous input.
+    Detects language of input text.
+    Returns 'es' for Spanish, 'en' for English.
+    Heuristics:
+    1. Accented letters or 'ñ' strongly suggest Spanish.
+    2. Common words in English vs Spanish suggest language.
+    3. Fallback to ratio of ASCII letters to total letters.
     """
     if not text or text.strip() == "":
         return "es"
+
     text_lower = text.lower()
-    # quick accent/ñ check
+
+    # Check for accented characters or ñ → Spanish
     if re.search(r"[áéíóúüñ]", text_lower):
         return "es"
-    # common words heuristic
-    english_common = ["the", "and", "is", "patient", "dr", "mg", "ml", "iv", "bp"]
+
+    # Count common words
+    english_common = ["the", "and", "is", "patient", "dr", "mg", "ml", "iv", "bp", "check-up", "test"]
+    spanish_common = ["el", "la", "y", "es", "paciente", "mg", "ml", "intravenosa", "presión", "revisión", "prueba"]
+
     english_hits = sum(1 for w in english_common if re.search(r"\b" + re.escape(w) + r"\b", text_lower))
-    spanish_common = ["el", "la", "y", "es", "paciente", "mg", "ml", "intravenosa", "presión"]
     spanish_hits = sum(1 for w in spanish_common if re.search(r"\b" + re.escape(w) + r"\b", text_lower))
+
     if english_hits > spanish_hits:
         return "en"
-    if spanish_hits > english_hits:
+    elif spanish_hits > english_hits:
         return "es"
-    # fallback by ratio of ASCII alphabetical vs accented (if any accents handled above)
-    ascii_letters = sum(1 for ch in text if ord(ch) < 128 and ch.isalpha())
+
+    # Fallback: ratio of ASCII letters vs total letters
+    ascii_letters = sum(1 for ch in text if ch.isascii() and ch.isalpha())
     total_letters = sum(1 for ch in text if ch.isalpha())
+
     if total_letters == 0:
         return "es"
-    if ascii_letters / total_letters > 0.85:
+    elif ascii_letters / total_letters > 0.85:
         return "en"
+
+    # Default fallback
     return "es"
+
 
 # ---- Load glossary (flexible) ----
 # Internal normalized form: list of entries with keys:
@@ -147,20 +159,7 @@ def generate_placeholder(idx: int) -> str:
 
 # ---- Apply glossary replacements to text, returning (placeholder_text, mapping, detected_hits) ----
 def apply_glossary_placeholders(text: str, src_lang: str):
-    """
-    Replaces occurrences of glossary terms (matching source language) with placeholders.
-    Returns:
-        - text_with_placeholders: str
-        - placeholder_map: dict placeholder -> replacement_text (what should appear in final translated output)
-        - had_hits: bool
-    Behavior:
-        - If src_lang == 'es' and matches a Spanish term: replacement is:
-            if acronym exists -> "ACR (term_en)"
-            else -> "term_en"
-        - If src_lang == 'en' and matches an English term or acronym: replacement is:
-            -> "term_es"
-        - Matching is case-insensitive and respects word boundaries.
-    """
+    
     placeholder_map = {}
     idx = 0
     text_out = text
@@ -192,8 +191,6 @@ def apply_glossary_placeholders(text: str, src_lang: str):
             return placeholder
 
         # Apply replacement
-        # But avoid replacing placeholders if they already exist in text_out
-        # So we call sub on current text_out
         try:
             text_out = pattern.sub(_repl, text_out)
         except Exception as e:
