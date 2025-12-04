@@ -28,5 +28,11 @@
     {
         "term_es": "artoplastía",
         "term_en": "arthroplasty"
+    },
+    {
+    "term_en": "immediate attention",
+    "term_es": "ATENCIÓN CRÍTICA",
+    "acronym": "IA"
     }
+
 ]
