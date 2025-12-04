@@ -5,8 +5,29 @@
         "acronym": "IV"
     },
     {
-        "term_es": "intramuscular",
-        "term_en": "intramuscular",
-        "acronym": "IM"
+        "term_es": "Prueba de hemoglobina glicosilada",
+        "term_en": "A1C test",
+        "acronym": "A1C"
+    },
+    {
+        "term_es": "Acetaminofén",
+        "term_en": "Acetaminophen"
+    },
+    {
+        "term_es": "índicew de líquido amniótico",
+        "term_en": "amniotic fluid index",
+        "acronym": "AFI"
+    },
+    {
+        "term_es": "Anemia",
+        "term_en": "Anemia"
+    },
+    {
+        "term_es": "Revisión Anual",
+        "term_en": "Annual Check-up"
+    },
+    {
+        "term_es": "Artoplastías",
+        "term_en": "Arthroplasties"
     }
 ]
