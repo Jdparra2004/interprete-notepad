@@ -167,16 +167,16 @@ def apply_glossary_placeholders(text: str, src_lang: str):
     """
     Replaces occurrences of glossary terms (matching source language) with placeholders.
     Returns:
-      - text_with_placeholders: str
-      - placeholder_map: dict placeholder -> replacement_text (what should appear in final translated output)
-      - had_hits: bool
+        - text_with_placeholders: str
+        - placeholder_map: dict placeholder -> replacement_text (what should appear in final translated output)
+        - had_hits: bool
     Behavior:
-      - If src_lang == 'es' and matches a Spanish term: replacement is:
+        - If src_lang == 'es' and matches a Spanish term: replacement is:
             if acronym exists -> "ACR (term_en)"
             else -> "term_en"
-      - If src_lang == 'en' and matches an English term or acronym: replacement is:
+        - If src_lang == 'en' and matches an English term or acronym: replacement is:
             -> "term_es"
-      - Matching is case-insensitive and respects word boundaries.
+        - Matching is case-insensitive and respects word boundaries.
     """
     placeholder_map = {}
     idx = 0
@@ -261,6 +261,12 @@ def reconstruct_text(translated_with_placeholders: str, placeholder_map: dict) -
 
 # ---- Flask app ----
 app = Flask(__name__)
+@app.route("/", methods=["GET"])
+def health_check():
+    return {
+        "status": "ok",
+        "message": "Interpreter Notepad backend running"
+    }
 
 @app.route("/health", methods=["GET"])
 def health():
