@@ -268,55 +268,43 @@ def health_check():
         "message": "Interpreter Notepad backend running"
     }
 
+
+
+
 @app.route("/health", methods=["GET"])
 def health():
     return jsonify({"status": "ok", "backend": "interprete-notepad", "glossary_entries": len(GLOSSARY)}), 200
 
+from flask import request, jsonify
+
 @app.route("/translate", methods=["POST"])
-def translate():
-    payload = request.get_json(silent=True)
-    if not payload or "text" not in payload:
-        return jsonify({"error": "Missing 'text' in JSON body."}), 400
-    text = payload.get("text", "")
-    text = text.strip()
-    # detect language
-    detected = detect_language_simple(text)
-    src = detected
-    tgt = "en" if src == "es" else "es"
+def translate_text():
+    data = request.get_json(silent=True)
+    if not data or "text" not in data or "source_lang" not in data:
+        return jsonify({"error": "Invalid payload"}), 400
 
-    # apply glossary replacements => placeholders + map
-    placeholder_text, placeholder_map, had_hits = apply_glossary_placeholders(text, src)
+    text = data["text"]
+    source_lang = data["source_lang"].lower()
 
-    # Decide if we need to call DeepL
-    # If placeholder_text == text and no placeholders were applied -> we still may want to call DeepL
-    # If placeholder_text contains placeholders, DeepL will usually keep placeholders intact, so safe to send.
-    translated_result = None
-    try:
-        # Only call DeepL if there is something non-empty (and key is present)
-        if DEEPL_API_KEY and placeholder_text.strip():
-            translated_result = call_deepl(placeholder_text, src, tgt)
-        else:
-            translated_result = None
-    except Exception as e:
-        logger.info("DeepL not used or failed: %s", e)
-        translated_result = None
+    result = text
 
-    # If DeepL succeeded, translated_result contains text with placeholders preserved.
-    # If not, fallback: set translated_result = placeholder_text (i.e., original segments left untranslated)
-    if translated_result is None:
-        # fallback: do not translate remotely; we'll return the original text with glossary replacements applied where matched.
-        translated_with_placeholders = placeholder_text
-    else:
-        translated_with_placeholders = translated_result
+    for entry in GLOSSARY.values():
+        term_es = entry.get("es")
+        term_en = entry.get("en")
+        acronym = entry.get("acronym")
 
-    # Now reconstruct placeholders -> final desired glossary-driven strings
-    final_text = reconstruct_text(translated_with_placeholders, placeholder_map)
+        if source_lang == "es" and term_es and term_en:
+            if term_es.lower() in result.lower():
+                replacement = f"{acronym} ({term_en})" if acronym else term_en
+                result = result.replace(term_es, replacement)
 
-    # Final cleanup: collapse multiple spaces, fix spaces before punctuation if any introduced
-    final_text = re.sub(r"\s+([,.;:!?])", r"\1", final_text)
-    final_text = re.sub(r"\s{2,}", " ", final_text).strip()
+        elif source_lang == "en" and term_en and term_es:
+            if term_en.lower() in result.lower():
+                replacement = f"{acronym} ({term_es})" if acronym else term_es
+                result = result.replace(term_en, replacement)
 
-    return jsonify({"translated_text": final_text, "detected_source": detected}), 200
+    return jsonify({"translated_text": result})
+
 
 # ---- Run (when executed directly) ----
 if __name__ == "__main__":
