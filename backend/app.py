@@ -277,6 +277,7 @@ def health():
 
 @app.route("/translate", methods=["POST"])
 def translate():
+    
     print("\n>>> ENTERED TRANSLATE ENDPOINT <<<\n")
     payload = request.get_json(force=True)
     
