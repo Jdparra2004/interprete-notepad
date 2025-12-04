@@ -270,34 +270,6 @@ def health_check():
 
 from flask import request, jsonify
 
-@app.route("/translate", methods=["POST"])
-def translate_text():
-    data = request.get_json(silent=True)
-    if not data or "text" not in data or "source_lang" not in data:
-        return jsonify({"error": "Invalid payload"}), 400
-
-    text = data["text"]
-    source_lang = data["source_lang"].lower()
-
-    result = text
-
-    for entry in GLOSSARY.values():
-        term_es = entry.get("es")
-        term_en = entry.get("en")
-        acronym = entry.get("acronym")
-
-        if source_lang == "es" and term_es and term_en:
-            if term_es.lower() in result.lower():
-                replacement = f"{acronym} ({term_en})" if acronym else term_en
-                result = result.replace(term_es, replacement)
-
-        elif source_lang == "en" and term_en and term_es:
-            if term_en.lower() in result.lower():
-                replacement = f"{acronym} ({term_es})" if acronym else term_es
-                result = result.replace(term_en, replacement)
-
-    return jsonify({"translated_text": result})
-
 
 @app.route("/health", methods=["GET"])
 def health():
