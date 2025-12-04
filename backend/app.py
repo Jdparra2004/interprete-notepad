@@ -26,9 +26,10 @@ CONFIG_PATH = os.path.join(BASE_DIR, "config.json")
 GLOSSARY_JSON_PATH = os.path.join(BASE_DIR, "glossary.json")
 GLOSSARY_DB_PATH = os.path.join(BASE_DIR, "glossary.db")
 
+
 # Default runtime settings
 DEFAULT_PORT = 5000
-DEEPL_API_URL = "https://api-free.deepl.com/v2/translate"  # may vary by plan
+DEEPL_API_URL = "https://api-free.deepl.com/v2/translate"  
 
 # ---- Logging ----
 logging.basicConfig(level=logging.INFO)
@@ -277,83 +278,50 @@ def health():
 
 @app.route("/translate", methods=["POST"])
 def translate():
-    
     print("\n>>> ENTERED TRANSLATE ENDPOINT <<<\n")
+
     payload = request.get_json(force=True)
-    
     logger.info("RAW DATA: %s", request.data)
     logger.info("PARSED JSON: %s", payload)
-    
+
     if not payload or "text" not in payload:
         return jsonify({"error": "Missing 'text' in JSON body."}), 400
-    #Reemplazo para normalizar el texto en español
-    text = payload.get("text", "")
-    text = normalize_spanish(text)
 
-    # detect language
-    src = "es"
-    tgt = "en"
-    detected = "es"
+    # Normalize text
+    text = normalize_spanish(payload.get("text", ""))
 
+    # Detect language
+    src = detect_language_simple(text)
+    tgt = "en" if src == "es" else "es"
 
-    # apply glossary replacements => placeholders + map
+    # Apply glossary (priority)
     placeholder_text, placeholder_map, had_hits = apply_glossary_placeholders(text, src)
 
-        # Decide if we need to call DeepL
-    # If placeholder_text == text and no placeholders were applied -> we still may want to call DeepL
-    # If placeholder_text contains placeholders, DeepL will usually keep placeholders intact, so safe to send.
-    
-    #Parte de la API
-    from utils import call_deepl
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    CONFIG_PATH = os.path.join(BASE_DIR, "config.json")
-    logger.info("DEEPL API KEY loaded: %s", bool(DEEPL_API_KEY))
+    # Decide DeepL usage
+    translated_with_placeholders = placeholder_text
+    if DEEPL_API_KEY and placeholder_text.strip():
+        try:
+            logger.info("Calling DeepL API...")
+            translated_with_placeholders = call_deepl(
+                placeholder_text,
+                src,
+                tgt
+            )
+        except Exception as e:
+            logger.warning("DeepL failed, fallback to glossary-only: %s", e)
 
-    DEEPL_API_KEY = None
-
-    if os.path.exists(CONFIG_PATH):
-        with open(CONFIG_PATH, "r", encoding="utf-8") as f:
-            config = json.load(f)
-            DEEPL_API_KEY = config.get("DEEPL_API_KEY")
-
-    if DEEPL_API_KEY:
-        translated_result = call_deepl(
-            placeholder_text,
-            src,
-            tgt,
-            DEEPL_API_KEY
-        )
-    else:
-        translated_result = placeholder_text
-    
-    #sección traducción
-    translated_result = None
-    try:
-        # Only call DeepL if there is something non-empty (and key is present)
-        if DEEPL_API_KEY and placeholder_text.strip() and not had_hits:
-            translated_result = call_deepl(placeholder_text, src, tgt)
-        else:
-            translated_result = None
-    except Exception as e:
-        logger.info("DeepL not used or failed: %s", e)
-        translated_result = None
-
-    # If DeepL succeeded, translated_result contains text with placeholders preserved.
-    # If not, fallback: set translated_result = placeholder_text (i.e., original segments left untranslated)
-    if translated_result is None:
-        # fallback: do not translate remotely; we'll return the original text with glossary replacements applied where matched.
-        translated_with_placeholders = placeholder_text
-    else:
-        translated_with_placeholders = translated_result
-
-    # Now reconstruct placeholders -> final desired glossary-driven strings
+    # Restore glossary placeholders
     final_text = reconstruct_text(translated_with_placeholders, placeholder_map)
 
-    # Final cleanup: collapse multiple spaces, fix spaces before punctuation if any introduced
+    # Cleanup
     final_text = re.sub(r"\s+([,.;:!?])", r"\1", final_text)
     final_text = re.sub(r"\s{2,}", " ", final_text).strip()
 
-    return jsonify({"translated_text": final_text, "detected_source": detected}), 200
+    return jsonify({
+        "translated_text": final_text,
+        "detected_source": src
+    }), 200
+
 
 # ---- Run (when executed directly) ----
 if __name__ == "__main__":
