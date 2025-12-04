@@ -305,7 +305,15 @@ def translate():
     
     #Parte de la API
     from utils import call_deepl
-    from config import DEEPL_API_KEY
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    CONFIG_PATH = os.path.join(BASE_DIR, "config.json")
+
+    DEEPL_API_KEY = None
+
+    if os.path.exists(CONFIG_PATH):
+        with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+            config = json.load(f)
+            DEEPL_API_KEY = config.get("DEEPL_API_KEY")
 
     if DEEPL_API_KEY:
         translated_result = call_deepl(
