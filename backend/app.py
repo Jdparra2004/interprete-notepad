@@ -292,9 +292,10 @@ def translate():
     text = normalize_spanish(text)
 
     # detect language
-    detected = detect_language_simple(text)
-    src = detected
-    tgt = "en" if src == "es" else "es"
+    src = "es"
+    tgt = "en"
+    detected = "es"
+
 
     # apply glossary replacements => placeholders + map
     placeholder_text, placeholder_map, had_hits = apply_glossary_placeholders(text, src)
