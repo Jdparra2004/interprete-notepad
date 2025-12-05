@@ -7,61 +7,72 @@
     <title>Interpreter Notepad</title>
     <link rel="stylesheet" href="./styles.css" />
 </head>
-    <body>
-    <div class="app">
-        <header>
+
+<body>
+<div class="app">
+
+    <header>
         <h1>Interpreter Notepad</h1>
         <p class="subtitle">Notas rápidas con traducción clínica — listo para interpretación</p>
-        </header>
+    </header>
 
-        <section class="structure">
+    <section class="structure">
+
+        <!-- 🔹 LADO IZQUIERDO: Opening + Input + Closing -->
         <div class="pane left">
+            
             <label>Opening (fijo)</label>
-            <textarea id="opening" class="fixed" readonly>
-                ⦁ Good Morning Thank You for Calling This is ________ Interpreter 
-                Id #### and I’ll be your Spanish interpreter for today, please speak 
-                in clear and short segments so I can interpret everything the best 
-                way possible. How can I help/assist you?
-                ⦁ Muy buen día Sr./Sra. ________, yo seré su intérprete de español el 
-                día de hoy recuerde que todo lo que usted diga será interpretado y 
-                tratado de manera confidencial. Por favor hable con oraciones claras y 
-                cortas para interpretar todo lo que diga.
-                </textarea>
+            <textarea id="opening" class="fixed block" readonly>
+• Good Morning Thank You for Calling This is ________ Interpreter
+Id #### and I’ll be your Spanish interpreter for today, please speak
+in clear and short segments so I can interpret everything the best
+way possible. How can I help/assist you?
+
+• Muy buen día Sr./Sra. ________, yo seré su intérprete de español el
+día de hoy recuerde que todo lo que usted diga será interpretado y
+tratado de manera confidencial. Por favor hable con oraciones claras y
+cortas para interpretar todo lo que diga.
+            </textarea>
 
             <label>Apuntes (escribe aquí)</label>
             <textarea id="input" placeholder="Escribe la nota aquí... (Ctrl+Enter para traducir)"></textarea>
 
             <div class="controls">
-            <button id="translateBtn">Traducir →</button>
-            <button id="clearBtn">Limpiar</button>
-            <label class="small"><input type="checkbox" id="useGlossary" checked> Usar glosario</label>
+                <button id="translateBtn">Traducir →</button>
+                <button id="clearBtn">Limpiar</button>
+                <label class="small"><input type="checkbox" id="useGlossary" checked> Usar glosario</label>
             </div>
 
             <label>Closing (fijo)</label>
-            <textarea id="closing" class="fixed" readonly>
-                ⦁ Is there anything else I can do for you? 
-                ⦁ Thank you for using our services. My name _______, Interpreter 
-                ID _______. Have a great day! 
-                ⦁ With the LEP: Se despide su intérprete, tenga buen día. 
+            <textarea id="closing" class="fixed block" readonly>
+• Is there anything else I can do for you?
+• Thank you for using our services. My name _______, Interpreter
+ID _______. Have a great day!
+• With the LEP: Se despide su intérprete, tenga buen día.
             </textarea>
         </div>
 
+        <!-- 🔹 LADO DERECHO: Traducción centrada verticalmente -->
         <div class="pane right">
             <label>Traducción</label>
-            <textarea id="output" readonly placeholder="La traducción aparecerá aquí..."></textarea>
+
+            <div class="translation-wrapper">
+                <textarea id="output" readonly placeholder="La traducción aparecerá aquí..."></textarea>
+            </div>
 
             <div class="meta">
-            <span id="langLabel">Idioma detectado: —</span>
-            <button id="copyBtn">Copiar</button>
+                <span id="langLabel">Idioma detectado: —</span>
+                <button id="copyBtn">Copiar</button>
             </div>
         </div>
-        </section>
+    </section>
 
-        <footer>
+    <footer>
         <small>Interprete Notepad — interfaz local · Conexión al backend en 127.0.0.1:5000</small>
-        </footer>
-    </div>
+    </footer>
 
-    <script src="./renderer.js"></script>
-    </body>
+</div>
+
+<script src="./renderer.js"></script>
+</body>
 </html>

@@ -931,5 +931,506 @@
         "term_en": "testosterone",
         "aliases_es": [],
         "aliases_en": []
+    },
+    {
+        "term_es": "albinismo",
+        "term_en": "albinism",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "aminoácidos",
+        "term_en": "amino acids",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "amniocentesis",
+        "term_en": "amniocentesis",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "portador",
+        "term_en": "carrier",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cromosomas",
+        "term_en": "chromosomes",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "daltonismo",
+        "term_en": "color blindness",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "enfermedad congénita",
+        "term_en": "congenital disease",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "ácido desoxirribonucleico",
+        "term_en": "deoxyribonucleic acid",
+        "aliases_es": ["ADN"],
+        "aliases_en": ["DNA"],
+        "acronym": "DNA"
+    },
+    {
+        "term_es": "síndrome de down",
+        "term_en": "down syndrome",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "gameto",
+        "term_en": "gamete",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "gen",
+        "term_en": "gene",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "defectos genéticos",
+        "term_en": "genetic defects",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "genoma",
+        "term_en": "genome",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "genotipo",
+        "term_en": "genotype",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "heredar",
+        "term_en": "inherit",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "mitocondria",
+        "term_en": "mitochondria",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "moléculas",
+        "term_en": "molecules",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "multicelular",
+        "term_en": "multicellular",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "mutación",
+        "term_en": "mutation",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "núcleo",
+        "term_en": "nucleus",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "óvulo",
+        "term_en": "ovum / ova",
+        "aliases_es": [],
+        "aliases_en": ["ovum", "ova"]
+    },
+    {
+        "term_es": "fenotipo",
+        "term_en": "phenotype",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "gen recesivo",
+        "term_en": "recessive gene",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "anemia de células falciformes",
+        "term_en": "sickle cell anemia",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "esperma",
+        "term_en": "sperm",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "unicelular",
+        "term_en": "unicellular",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "adenoides",
+        "term_en": "adenoids",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "anticuerpos",
+        "term_en": "antibodies",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "apéndice",
+        "term_en": "appendix",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "autoinmune",
+        "term_en": "autoimmune",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "células b",
+        "term_en": "b-cells",
+        "aliases_es": [],
+        "aliases_en": ["b cells", "b lymphocytes"]
+    },
+    {
+        "term_es": "médula ósea",
+        "term_en": "bone marrow",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "ganglios linfáticos",
+        "term_en": "lymph nodes",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "vasos linfáticos",
+        "term_en": "lymph vessels",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "linfocitos",
+        "term_en": "lymphocytes",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "linfoma",
+        "term_en": "lymphoma",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "piel",
+        "term_en": "skin",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "bazo",
+        "term_en": "spleen",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "células t",
+        "term_en": "t-cells",
+        "aliases_es": [],
+        "aliases_en": ["t cells", "t lymphocytes"]
+    },
+    {
+        "term_es": "timo",
+        "term_en": "thymus",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "amígdalas",
+        "term_en": "tonsils",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "tendón de aquiles",
+        "term_en": "achilles tendon",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "bíceps",
+        "term_en": "biceps",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "glúteos",
+        "term_en": "buttocks",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "gemelos",
+        "term_en": "calf",
+        "aliases_es": ["pantorrilla"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "músculo cardíaco",
+        "term_en": "cardiac muscle",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "deltoides",
+        "term_en": "deltoid",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "diafragma",
+        "term_en": "diaphragm",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "isquiotibiales",
+        "term_en": "hamstrings",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cuádriceps",
+        "term_en": "quadriceps",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "manguito rotador",
+        "term_en": "rotating cuff",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "músculo esquelético",
+        "term_en": "skeletal muscle",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "músculo liso",
+        "term_en": "smooth muscle",
+        "aliases_es": ["músculo suave"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "sóleo",
+        "term_en": "soleum",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "esguince",
+        "term_en": "sprain",
+        "aliases_es": ["torcedura"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "distensión",
+        "term_en": "strain",
+        "aliases_es": ["lesión en músculo o tendón"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "músculo distendido",
+        "term_en": "strained muscle",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "músculo desgarrado",
+        "term_en": "torn muscle",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "tríceps",
+        "term_en": "triceps",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cerebro",
+        "term_en": "brain",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "tallo cerebral",
+        "term_en": "brainstem",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "túnel carpiano",
+        "term_en": "carpal tunnel",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "sistema nervioso central",
+        "term_en": "central nervous system",
+        "aliases_es": [],
+        "aliases_en": [],
+        "acronym": "CNS"
+    },
+    {
+        "term_es": "cerebelo",
+        "term_en": "cerebellum",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "corteza cerebral",
+        "term_en": "cerebral cortex",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cráneo",
+        "term_en": "craneum / skull",
+        "aliases_es": [],
+        "aliases_en": ["skull"]
+    },
+    {
+        "term_es": "duramadre",
+        "term_en": "dura mater",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "hemisferios",
+        "term_en": "hemispheres",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "lóbulos",
+        "term_en": "lobes",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "neuronas motoras",
+        "term_en": "motor neurons",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "nervios",
+        "term_en": "nerves",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "conexiones neuronales",
+        "term_en": "neural connections",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "neuronas",
+        "term_en": "neurons",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "sistema nervioso periférico",
+        "term_en": "peripheral nervous system",
+        "aliases_es": [],
+        "aliases_en": [],
+        "acronym": "PNS"
+    },
+    {
+        "term_es": "glándula pituitaria",
+        "term_en": "pituitary gland",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "convulsión",
+        "term_en": "seizure",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "neuronas sensitivas",
+        "term_en": "sensory neurons",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "nervio ciático",
+        "term_en": "sciatic nerve",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "médula espinal",
+        "term_en": "spinal cord",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "líquido cefalorraquídeo",
+        "term_en": "spinal fluid",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "sistema nervioso vegetativo",
+        "term_en": "vegetative (involuntary) nervous system",
+        "aliases_es": ["sistema nervioso involuntario"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "vértebras",
+        "term_en": "vertebrae",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "sistema nervioso voluntario",
+        "term_en": "voluntary nervous system",
+        "aliases_es": [],
+        "aliases_en": []
     }
 ]
