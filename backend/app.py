@@ -241,7 +241,7 @@ def reconstruct_text(translated_with_placeholders: str, placeholder_map: dict) -
         out = out.replace(ph, repl)
     return out
 
-# ---- Flask app ----
+#%%  ---- Flask app ---- 
 app = Flask(__name__)
 @app.route("/", methods=["GET"])
 def health_check():
@@ -256,57 +256,22 @@ from flask import request, jsonify
 def health():
     return jsonify({"status": "ok", "backend": "interprete-notepad", "glossary_entries": len(GLOSSARY)}), 200
 
-@app.route("/translate", methods=["POST"])
-def translate():
-    print("\n>>> ENTERED TRANSLATE ENDPOINT <<<\n")
+import unicodedata
+import re
 
-    payload = request.get_json(force=True)
-    logger.info("RAW DATA: %s", request.data)
-    logger.info("PARSED JSON: %s", payload)
+def sanitize_input_text(text: str) -> str:
+    text = unicodedata.normalize("NFC", text)
+    text = re.sub(r"[\x00-\x1F\x7F]", "", text)
+    text = re.sub(r"\s{2,}", " ", text).strip()
+    return text
 
-    if not payload or "text" not in payload:
-        return jsonify({"error": "Missing 'text' in JSON body."}), 400
+def sanitize_output_text(text: str) -> str:
+    text = unicodedata.normalize("NFC", text)
+    text = re.sub(r"[§¬«»›‹]", "", text)
+    text = re.sub(r"\s+([,.;:!?])", r"\1", text)
+    text = re.sub(r"\s{2,}", " ", text)
+    return text.strip()
 
-    # Normalize Spanish text
-    text = normalize_spanish(payload.get("text", ""))
-
-    # Detect language
-    src = detect_language_simple(text)
-    tgt = "en" if src == "es" else "es"
-    logger.info("Detected source language: %s | Target language: %s", src, tgt)
-
-    # Apply glossary placeholders (priority)
-    placeholder_text, placeholder_map, had_hits = apply_glossary_placeholders(text, src)
-
-    # Initialize translated result
-    translated_with_placeholders = placeholder_text
-
-    # Call DeepL only if API key exists and there is text to translate
-    if DEEPL_API_KEY and placeholder_text.strip():
-        try:
-            # Log info
-            logger.info("Calling DeepL API...")
-            # Only send text that has no glossary placeholders
-            # DeepL will skip placeholders like <<<GL0>>> automatically
-            translated_with_placeholders = call_deepl(
-                placeholder_text,
-                src,
-                tgt
-            )
-        except Exception as e:
-            logger.warning("DeepL API failed. Fallback to glossary-only: %s", e)
-
-    # Reconstruct glossary placeholders into final text
-    final_text = reconstruct_text(translated_with_placeholders, placeholder_map)
-
-    # Final cleanup: collapse multiple spaces, fix spaces before punctuation
-    final_text = re.sub(r"\s+([,.;:!?])", r"\1", final_text)
-    final_text = re.sub(r"\s{2,}", " ", final_text).strip()
-
-    return jsonify({
-        "translated_text": final_text,
-        "detected_source": src
-    }), 200
 
 
 
