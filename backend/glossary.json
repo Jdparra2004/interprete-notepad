@@ -16,14 +16,14 @@
         "term_es": "acetaminofén",
         "term_en": "acetaminophen",
         "aliases_es": ["acetaminofen"],
-        "aliases_en": ["paracetamol"]
+        "aliases_en": ["acetaminophen"]
     },
     {
         "term_es": "índice de líquido amniótico",
         "term_en": "amniotic fluid index",
         "acronym": "AFI",
         "aliases_es": ["índice de liquido amniotico"],
-        "aliases_en": ["amniotic index"]
+        "aliases_en": ["amniotic fluid index"]
     },
     {
         "term_es": "anemia",
