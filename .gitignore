@@ -1,0 +1,16 @@
+# Node
+node_modules/
+electron-app/node_modules/
+package-lock.json
+
+# Python
+backend/__pycache__/
+backend/*.pyc
+
+# Build artifacts
+build/
+dist/
+
+# Electron builder output
+electron-app/dist/
+electron-app/build/
