@@ -1,46 +1,382 @@
 [
     {
-        "term_es": "vía intravenosa",
-        "term_en": "intravenous",
-        "acronym": "IV",
-        "aliases_es": ["via intravenosa"],
-        "aliases_en": ["intravenous line"]
-    },
-    {
-        "term_es": "prueba de hemoglobina glicosilada",
-        "term_en": "A1C test",
-        "aliases_es": ["hemoglobina glicosilada", "prueba A1C"],
-        "aliases_en": ["glycated hemoglobin test"]
-    },
-    {
-        "term_es": "acetaminofén",
-        "term_en": "acetaminophen",
-        "aliases_es": ["acetaminofen"],
-        "aliases_en": ["acetaminophen"]
-    },
-    {
-        "term_es": "índice de líquido amniótico",
-        "term_en": "amniotic fluid index",
-        "acronym": "AFI",
-        "aliases_es": ["índice de liquido amniotico"],
-        "aliases_en": ["amniotic fluid index"]
-    },
-    {
-        "term_es": "anemia",
-        "term_en": "anemia",
+        "term_es": "cavidad abdominal",
+        "term_en": "abdominal cavity",
         "aliases_es": [],
         "aliases_en": []
     },
     {
-        "term_es": "revisión anual",
-        "term_en": "annual check-up",
-        "aliases_es": ["control anual"],
-        "aliases_en": ["annual checkup"]
+        "term_es": "axila",
+        "term_en": "armpit",
+        "aliases_es": [],
+        "aliases_en": []
     },
     {
-        "term_es": "artoplastía",
-        "term_en": "arthroplasty",
-        "aliases_es": ["artoplastia"],
+        "term_es": "brazos",
+        "term_en": "arms",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "barriga",
+        "term_en": "belly",
+        "aliases_es": ["vientre"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "senos",
+        "term_en": "breast",
+        "aliases_es": ["mamas"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "pantorrilla",
+        "term_en": "calf",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "pecho",
+        "term_en": "chest",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "mentón",
+        "term_en": "chin",
+        "aliases_es": ["barbilla"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "entrepierna",
+        "term_en": "crotch",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "tímpano",
+        "term_en": "eardrum",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "lóbulo",
+        "term_en": "earlobe",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "pies",
+        "term_en": "feet",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "dedos de la mano",
+        "term_en": "fingers",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "fontanela",
+        "term_en": "fontanella / crown of the head",
+        "aliases_es": ["mollera"],
+        "aliases_en": ["crown of the head"]
+    },
+    {
+        "term_es": "antebrazo",
+        "term_en": "forearm",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "frente",
+        "term_en": "forehead",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "ingle",
+        "term_en": "groin",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cadera",
+        "term_en": "hip",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "oído interno",
+        "term_en": "inner ear",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "mandíbula",
+        "term_en": "jaw",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+
+    {
+        "term_es": "aorta",
+        "term_en": "aorta",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "paredes arteriales",
+        "term_en": "arterial walls",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "arterias",
+        "term_en": "arteries",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "aurícula",
+        "term_en": "atrium",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "sangrado",
+        "term_en": "bleeding",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "vasos sanguíneos",
+        "term_en": "blood vessels",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "capilares",
+        "term_en": "capillaries",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "dióxido de carbono",
+        "term_en": "carbon dioxide",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "arteria carótida",
+        "term_en": "carotid artery",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "arteria celíaca",
+        "term_en": "celiac artery",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "coagulación",
+        "term_en": "clotting",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "arteria coronaria",
+        "term_en": "coronary artery",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "arteria femoral",
+        "term_en": "femoral artery",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "latido cardíaco",
+        "term_en": "heartbeat",
+        "aliases_es": ["latido del corazón"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "ritmo cardíaco",
+        "term_en": "heart rhythm",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "válvula cardíaca",
+        "term_en": "heart valve",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "arteria ilíaca",
+        "term_en": "iliac artery",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "arteria mesentérica",
+        "term_en": "mesenteric artery",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "miocardio",
+        "term_en": "myocardium",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "dientes de leche",
+        "term_en": "baby teeth",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "canino",
+        "term_en": "canine",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "caries dental",
+        "term_en": "cavity",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "diente astillado",
+        "term_en": "chipped tooth",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "limpieza",
+        "term_en": "cleaning",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "corona",
+        "term_en": "crown",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "frenillos dentales",
+        "term_en": "dental braces",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "puente dental",
+        "term_en": "dental bridge",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "hilo dental",
+        "term_en": "dental floss",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "dentadura postiza",
+        "term_en": "dentures",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "esmalte",
+        "term_en": "enamel",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "endodoncia",
+        "term_en": "endodontics",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "relleno dental",
+        "term_en": "filling",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "fluoruro",
+        "term_en": "fluoride",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "hacer gárgaras",
+        "term_en": "gargle",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "guarda dental",
+        "term_en": "mouthguard",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "enjuague bucal",
+        "term_en": "mouthwash",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "enfermedad periodontal",
+        "term_en": "periodontal disease",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "placa bacteriana",
+        "term_en": "plaque",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "porcelana",
+        "term_en": "porcelain",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "tratamiento de conducto",
+        "term_en": "root canal",
+        "aliases_es": ["endodoncia"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "articulación temporomandibular",
+        "term_en": "temporomandibular joint",
+        "aliases_es": [],
+        "aliases_en": [],
+        "acronym": "TMJ"
+    },
+    {
+        "term_es": "pasta dental",
+        "term_en": "toothpaste",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "muela del juicio",
+        "term_en": "wisdom tooth",
+        "aliases_es": [],
         "aliases_en": []
     }
 ]
