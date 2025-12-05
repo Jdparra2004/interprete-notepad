@@ -7,27 +7,40 @@ import json
 import logging
 import unicodedata
 import re
+import sys
 
 from core.pipeline import TranslationPipeline
 from core.glossary import Glossary
 
+# ============================================================
+# 1. Resolver rutas reales incluso cuando se empaqueta con PyInstaller
+# ============================================================
+
+def resource_path(relative_path):
+    """
+    Devuelve la ruta absoluta tanto en modo desarrollo como empaquetado.
+    PyInstaller coloca los archivos en sys._MEIPASS.
+    """
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(os.path.dirname(__file__))
+    return os.path.join(base_path, relative_path)
 
 # ---------------------------
 # Paths / Config
 # ---------------------------
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-CONFIG_PATH = os.path.join(BASE_DIR, "config.json")
-GLOSSARY_JSON_PATH = os.path.join(BASE_DIR, "glossary.json")
+CONFIG_PATH = resource_path("config.json")
+GLOSSARY_JSON_PATH = resource_path("glossary.json")
 
 DEFAULT_PORT = 5000
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("interprete-backend")
 
-
-# ---------------------------
-# Load config.json
-# ---------------------------
+# ============================================================
+# 2. Load config.json (API key y settings)
+# ============================================================
 CONFIG = {}
 if os.path.exists(CONFIG_PATH):
     try:
@@ -39,10 +52,9 @@ if os.path.exists(CONFIG_PATH):
 DEEPL_API_KEY = CONFIG.get("DEEPL_API_KEY") or os.environ.get("DEEPL_API_KEY")
 PORT = int(CONFIG.get("PORT", DEFAULT_PORT))
 
-
-# ---------------------------
-# Initialize Glossary
-# ---------------------------
+# ============================================================
+# 3. Load glossary.json
+# ============================================================
 try:
     with open(GLOSSARY_JSON_PATH, "r", encoding="utf-8") as f:
         glossary_data = json.load(f)
@@ -52,20 +64,18 @@ except Exception as e:
 
 glossary = Glossary(glossary_data)
 
-# ---------------------------
-# Initialize Pipeline
-# ---------------------------
+# ============================================================
+# 4. Initialize pipeline
+# ============================================================
 pipeline = TranslationPipeline(
     glossary=glossary,
     deepl_api_key=DEEPL_API_KEY
 )
 
-
-# ---------------------------
-# Flask App
-# ---------------------------
+# ============================================================
+# 5. Flask App
+# ============================================================
 app = Flask(__name__)
-
 
 @app.route("/", methods=["GET"])
 def root():
@@ -73,7 +83,6 @@ def root():
         "status": "ok",
         "message": "Interpreter Notepad backend running"
     }
-
 
 @app.route("/health", methods=["GET"])
 def health():
@@ -83,12 +92,10 @@ def health():
         "glossary_entries": glossary.size()
     }), 200
 
-
 @app.route("/translate", methods=["POST"])
 def translate():
     logger.info("\n>>> ENTERED TRANSLATE ENDPOINT <<<\n")
 
-    # ---- Validate JSON ----
     try:
         payload = request.get_json(force=True)
     except Exception:
@@ -99,18 +106,15 @@ def translate():
 
     text = payload["text"]
 
-    # ---- Validate type ----
     if not isinstance(text, str):
         return jsonify({"error": "'text' must be a string"}), 400
 
-    # ---- Validate content ----
     if not text.strip():
         return jsonify({"error": "'text' cannot be empty"}), 400
 
     if len(text) > 5000:
         return jsonify({"error": "Text exceeds 5000 characters"}), 413
 
-    # ---- Normalize text ----
     text = (
         text.replace("\x00", "")
             .replace("\u200b", "")
@@ -119,9 +123,6 @@ def translate():
     )
     text = unicodedata.normalize("NFC", text)
 
-    # ---------------------------
-    # Run Translation Pipeline
-    # ---------------------------
     try:
         result = pipeline.run(text)
         translated_text = result["translated_text"]
@@ -130,19 +131,17 @@ def translate():
         logger.error("Pipeline failed: %s", e)
         return jsonify({"error": "Translation pipeline internal error"}), 500
 
-    # ---- Return response ----
     return jsonify({
         "translated_text": translated_text,
         "detected_source": detected_source
     }), 200
 
+
 @app.post("/debug_glossary")
 def debug_glossary():
     data = request.json.get("text", "")
-    
-    # detectar idioma correctamente
-    src = pipeline.detect_language_simple(data)
 
+    src = pipeline.detect_language_simple(data)
     pre, mapping, hits = glossary.apply_placeholders(data, src)
 
     return {
@@ -153,11 +152,9 @@ def debug_glossary():
         "hits": hits
     }
 
-
-
-# ---------------------------
-# Run
-# ---------------------------
+# ============================================================
+# 6. Run
+# ============================================================
 if __name__ == "__main__":
     logger.info("Starting Interprete Notepad backend on 127.0.0.1:%d", PORT)
     app.run(host="127.0.0.1", port=PORT, debug=False)
