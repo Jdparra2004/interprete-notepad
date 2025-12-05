@@ -5,17 +5,29 @@ App de notas para interpretes con traducción directa
 interprete-notepad/
 ├─ electron-app/
 │  ├─ package.json
-│  ├─ main.js                 # bootstrap de Electron
+│  ├─ main.js
 │  ├─ public/
 │  │  ├─ index.html
 │  │  ├─ styles.css
-│  │  └─ renderer.js          # UI logic
+│  │  └─ renderer.js
+│
 ├─ backend/
-│  ├─ app.py                  # Flask API
-│  ├─ glossary.json           # glosario local (embebido)
-│  ├─ config.json             # settings, DeepL key (local)
+│  ├─ app.py                       # Flask + endpoints
+│  ├─ glossary.json                # la base de términos
+│  ├─ config.json                  # API keys, flags
 │  ├─ requirements.txt
-│  └─ utils.py                # tokenizador, helpers
+│  │
+│  ├─ core/                        # ← NUEVA carpeta modular
+│  │  ├─ normalizer.py             # limpiar acentos, estandarizar
+│  │  ├─ glossary.py               # cargar + indexar glosario
+│  │  ├─ protector.py              # blindaje (tokens seguros)
+│  │  ├─ pipeline.py               # flujo general de traducción
+│  │  └─ __init__.py
+│  │
+│  ├─ utils.py                     # quedará solo con cosas pequeñas
+│  └─ __init__.py
+│
 ├─ build/
-│  └─ scripts for packaging (electron-builder, pyinstaller)
+│  └─ scripts (electron-builder, pyinstaller)
+│
 └─ README.md
