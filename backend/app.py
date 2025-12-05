@@ -250,7 +250,8 @@ def health_check():
         "message": "Interpreter Notepad backend running"
     }
 
-from flask import request, jsonify
+from flask import request, jsonify, unicodedata
+import re
 
 @app.route("/health", methods=["GET"])
 def health():
