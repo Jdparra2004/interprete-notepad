@@ -23,7 +23,6 @@ from utils import normalize_spanish
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PATH = os.path.join(BASE_DIR, "config.json")
 GLOSSARY_JSON_PATH = os.path.join(BASE_DIR, "glossary.json")
-GLOSSARY_DB_PATH = os.path.join(BASE_DIR, "glossary.db")
 
 
 # Default runtime settings
