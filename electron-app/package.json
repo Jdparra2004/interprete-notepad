@@ -25,33 +25,43 @@
     "build": {
         "appId": "com.juanparra.interpreternotepad",
         "productName": "Interpreter Notepad",
-        "copyright":
-            "© 2025 Juan David Parra Cantor. Todos los derechos reservados.",
+        "copyright": 
+        "© 2025 Juan David Parra Cantor. Todos los derechos reservados.",
 
         "directories": {
-            "output": "dist"
+        "output": "dist"
         },
 
         "files": [
-            "**/*",
-            {
-                "from": "backend/",
-                "to": "backend",
-                "filter": ["app.exe", "glossary.json", "config.json", "core/**/*"]
-            }
+        "**/*"
+        ],
+
+        "extraResources": [
+        {
+            "from": "backend/app.exe",
+            "to": "backend/app.exe"
+        },
+        {
+            "from": "backend/glossary.json",
+            "to": "backend/glossary.json"
+        },
+        {
+            "from": "backend/config.json",
+            "to": "backend/config.json"
+        }
         ],
 
         "win": {
-            "target": "nsis",
-            "icon": "icon.ico"
+        "target": "nsis",
+        "icon": "icon.ico"
         },
 
         "nsis": {
-            "oneClick": false,
-            "allowToChangeInstallationDirectory": true,
-            "createDesktopShortcut": true,
-            "createStartMenuShortcut": true,
-            "shortcutName": "Interpreter Notepad"
+        "oneClick": false,
+        "allowToChangeInstallationDirectory": true,
+        "createDesktopShortcut": true,
+        "createStartMenuShortcut": true,
+        "shortcutName": "Interpreter Notepad"
         }
     }
 }
