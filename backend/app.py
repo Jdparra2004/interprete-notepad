@@ -256,24 +256,84 @@ from flask import request, jsonify
 def health():
     return jsonify({"status": "ok", "backend": "interprete-notepad", "glossary_entries": len(GLOSSARY)}), 200
 
-import unicodedata
-import re
+@app.route("/translate", methods=["POST"])
+def translate():
+    print("\n>>> ENTERED TRANSLATE ENDPOINT <<<\n")
 
-def sanitize_input_text(text: str) -> str:
+    # -------- 1. Validate JSON --------
+    try:
+        payload = request.get_json(force=True)
+    except Exception:
+        return jsonify({"error": "Invalid JSON format."}), 400
+
+    logger.info("RAW DATA: %s", request.data)
+    logger.info("PARSED JSON: %s", payload)
+
+    if not payload or "text" not in payload:
+        return jsonify({"error": "Missing 'text'"}), 400
+
+    text = payload["text"]
+
+    # -------- 2. Validate type --------
+    if not isinstance(text, str):
+        return jsonify({"error": "'text' must be a string"}), 400
+
+    # -------- 3. Validate not empty --------
+    if not text.strip():
+        return jsonify({"error": "'text' cannot be empty"}), 400
+
+    # -------- 4. Size limit --------
+    if len(text) > 5000:
+        return jsonify({"error": "Text exceeds 5000 characters"}), 413
+
+    # -------- 5. Sanitize text --------
+    text = (
+        text.replace("\x00", "")
+            .replace("\u200b", "")   # zero-width space
+            .replace("\ufeff", "")   # BOM
+            .strip()
+    )
     text = unicodedata.normalize("NFC", text)
-    text = re.sub(r"[\x00-\x1F\x7F]", "", text)
-    text = re.sub(r"\s{2,}", " ", text).strip()
-    return text
 
-def sanitize_output_text(text: str) -> str:
-    text = unicodedata.normalize("NFC", text)
-    text = re.sub(r"[§¬«»›‹]", "", text)
-    text = re.sub(r"\s+([,.;:!?])", r"\1", text)
-    text = re.sub(r"\s{2,}", " ", text)
-    return text.strip()
+    # -------- 6. Normalize Spanish for matching --------
+    text = normalize_spanish(text)
 
+    # -------- 7. Detect source language --------
+    src = detect_language_simple(text)
+    tgt = "en" if src == "es" else "es"
+    logger.info("Detected source: %s -> %s", src, tgt)
 
+    # -------- 8. Glossary placeholder pass --------
+    placeholder_text, placeholder_map, had_hits = apply_glossary_placeholders(text, src)
 
+    translated_with_placeholders = placeholder_text
+
+    # -------- 9. DeepL call if available --------
+    if DEEPL_API_KEY and placeholder_text.strip():
+        try:
+            logger.info("Calling DeepL API...")
+            translated_with_placeholders = call_deepl(
+                placeholder_text,
+                src,
+                tgt
+            )
+        except Exception as e:
+            logger.warning("DeepL API failed: %s", e)
+
+    # -------- 10. Reconstruct placeholders --------
+    final_text = reconstruct_text(translated_with_placeholders, placeholder_map)
+
+    # -------- 11. Cleanup final output --------
+    final_text = re.sub(r"\s+([,.;:!?])", r"\1", final_text)
+    final_text = re.sub(r"\s{2,}", " ", final_text)
+    final_text = final_text.replace("§", "")  # símbolo basura detectado
+    final_text = final_text.strip()
+
+    # -------- 12. Return response --------
+    return jsonify({
+        "translated_text": final_text,
+        "detected_source": src
+    }), 200
 
 # ---- Run (when executed directly) ----
 if __name__ == "__main__":
