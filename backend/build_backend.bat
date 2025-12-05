@@ -13,7 +13,12 @@ if exist build rd /s /q build
 if exist dist rd /s /q dist
 
 REM 3) ejecutar pyinstaller
-pyinstaller --noconfirm --onefile --add-data "glossary.json;." --add-data "config.json;." app.py
+pyinstaller --noconfirm --onefile ^
+    --add-data "glossary.json;." ^
+    --add-data "config.json;." ^
+    --add-data "core;core" ^
+    app.py
+
 
 IF %ERRORLEVEL% NEQ 0 (
     echo PyInstaller falló. Revisa el log.
