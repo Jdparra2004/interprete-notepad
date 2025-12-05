@@ -136,6 +136,18 @@ def translate():
         "detected_source": detected_source
     }), 200
 
+@app.post("/debug_glossary")
+def debug_glossary():
+    data = request.json.get("text", "")
+    pre, mapping, hits = glossary.apply_placeholders(data, "en")
+    return {
+        "input": data,
+        "pre_with_placeholders": pre,
+        "mapping": mapping,
+        "hits": hits
+    }
+
+
 # ---------------------------
 # Run
 # ---------------------------

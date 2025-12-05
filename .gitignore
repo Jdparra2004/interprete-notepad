@@ -5,7 +5,9 @@ package-lock.json
 
 # Python
 backend/__pycache__/
+backend/core/__pycache__/
 backend/*.pyc
+backend/core/*.pyc
 
 # Build artifacts
 build/
