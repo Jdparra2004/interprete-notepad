@@ -6,6 +6,11 @@ interprete-notepad/
 ├─ electron-app/
 │  ├─ package.json
 │  ├─ main.js
+
+│  ├─ package-lock.json
+│  ├─ api.js
+
+│  ├─ preload.js
 │  ├─ public/
 │  │  ├─ index.html
 │  │  ├─ styles.css
