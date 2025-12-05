@@ -3,118 +3,128 @@
 import re
 from typing import List, Dict, Tuple
 
+
 class Glossary:
     """
-    Sistema de glosario con placeholders, bidireccional:
-      ES → EN (y agrega acrónimo si existe)
-      EN → ES (detecta acrónimos también)
-
-    apply_placeholders(text, src_lang) ->
-        (text_with_placeholders, placeholder_map, had_hits)
-
-    restore_placeholders(text, placeholder_map) ->
-        text restored
+    Maneja:
+      - generación de placeholders
+      - reemplazo seguro antes de DeepL
+      - restauración después de DeepL
     """
 
     def __init__(self, entries: List[Dict]):
         self.entries = entries or []
-        # compiled items:
-        # (regex, entry_dict, lang_key)  lang_key = "es" | "en" | "acronym"
-        self.compiled: List[Tuple[re.Pattern, Dict, str]] = []
-        self._compile()
+        self.compiled = []
+        self._compile_all()
 
-    def _compile(self):
-        """Precompila patrones para ES, EN y acrónimos."""
+    # ---------------------------------------------------------
+    # Compilación de variantes ES / EN / ACRÓNIMO
+    # ---------------------------------------------------------
+    def _make_variants(self, entry: Dict) -> List[Tuple[str, str]]:
+        variants = []
+
+        te = entry.get("term_es", "").strip()
+        tn = entry.get("term_en", "").strip()
+        ac = entry.get("acronym", "").strip()
+
+        if te:
+            variants.append((te, "es"))
+        if tn:
+            variants.append((tn, "en"))
+        if ac:
+            variants.append((ac, "acronym"))
+
+        for a in entry.get("aliases_es", []) or []:
+            variants.append((a.strip(), "es"))
+
+        for a in entry.get("aliases_en", []) or []:
+            variants.append((a.strip(), "en"))
+
+        return variants
+
+    def _compile_all(self):
         self.compiled = []
 
         for entry in self.entries:
-            te = entry.get("term_es", "").strip()
-            tn = entry.get("term_en", "").strip()
-            ac = (entry.get("acronym") or "").strip()
+            for variant, lang_key in self._make_variants(entry):
+                if not variant:
+                    continue
 
-            # principal ES
-            if te:
-                pat = re.compile(r"\b" + re.escape(te) + r"\b", re.IGNORECASE)
-                self.compiled.append((pat, entry, "es"))
+                # \b para palabras exactas y evitar falsos positivos
+                pat = re.compile(
+                    r"\b" + re.escape(variant) + r"\b",
+                    flags=re.IGNORECASE | re.UNICODE
+                )
 
-            # principal EN
-            if tn:
-                pat = re.compile(r"\b" + re.escape(tn) + r"\b", re.IGNORECASE)
-                self.compiled.append((pat, entry, "en"))
+                self.compiled.append((pat, entry, lang_key))
 
-            # acrónimo
-            if ac:
-                pat = re.compile(r"\b" + re.escape(ac) + r"\b", re.IGNORECASE)
-                self.compiled.append((pat, entry, "acronym"))
-
-            # alias ES
-            for a in entry.get("aliases_es", []) or []:
-                a = a.strip()
-                if a:
-                    pat = re.compile(r"\b" + re.escape(a) + r"\b", re.IGNORECASE)
-                    self.compiled.append((pat, entry, "es"))
-
-            # alias EN
-            for a in entry.get("aliases_en", []) or []:
-                a = a.strip()
-                if a:
-                    pat = re.compile(r"\b" + re.escape(a) + r"\b", re.IGNORECASE)
-                    self.compiled.append((pat, entry, "en"))
-
-        # Ordenar por longitud para capturar términos más largos primero
+        # Ordenar por longitud para preferir coincidencias largas
         self.compiled.sort(key=lambda t: -len(t[0].pattern))
 
-    def _placeholder(self, idx: int) -> str:
+    # ---------------------------------------------------------
+    # Generación de placeholders
+    # ---------------------------------------------------------
+    def _generate_placeholder(self, idx: int):
         return f"GLOSARIOPH{idx:04d}TOKEN"
 
+    # ---------------------------------------------------------
+    # Reemplazo antes de traducir
+    # ---------------------------------------------------------
     def apply_placeholders(self, text: str, src_lang: str):
         """
-        src_lang = "es" o "en"
-        Reemplaza términos del glosario con placeholders.
-        Regresa: (nuevo_texto, mapa, had_hits)
+        src_lang: "es" o "en"
+        Retorna:
+           text_modificado, placeholder_map, had_hits
         """
-        if not isinstance(text, str) or not text.strip():
+        if not text.strip():
             return text, {}, False
 
-        result = text
-        placeholder_map = {}
+        is_es = src_lang == "es"
+        is_en = src_lang == "en"
+
+        ph_map = {}
         had_hits = False
-        idx = 1
+        current_text = text
+
+        ph_index = 1
 
         for pattern, entry, lang_key in self.compiled:
 
-            # Validar “hacia dónde” traducimos
-            if src_lang == "es":
-                # ES → EN + (acrónimo si existe)
-                if lang_key != "es":
-                    continue
+            # Determinar si este patrón aplica según el idioma fuente
+            if is_es and lang_key != "es":
+                continue
+            if is_en and lang_key not in ("en", "acronym"):
+                continue
 
-                tn = entry.get("term_en", "").strip()
-                ac = entry.get("acronym", "").strip()
+            term_es = entry.get("term_es", "")
+            term_en = entry.get("term_en", "")
+            acronym = entry.get("acronym", "")
 
-                final = f"{ac} ({tn})" if ac else tn
-
+            # Qué valor debe restaurarse después de DeepL
+            if is_es:
+                # ES → EN
+                replacement_value = f"{acronym} ({term_en})" if acronym else term_en
             else:
-                # EN → ES (si es acrónimo o término EN)
-                if lang_key not in ("en", "acronym"):
-                    continue
+                # EN → ES, si usa acrónimo también devuelve ES
+                replacement_value = term_es
 
-                final = entry.get("term_es", "").strip()
+            # Generar placeholder único
+            placeholder = self._generate_placeholder(ph_index)
 
-            placeholder = self._placeholder(idx)
-            new_text, n = pattern.subn(placeholder, result)
+            new_text, count = pattern.subn(placeholder, current_text)
 
-            if n > 0:
-                result = new_text
-                placeholder_map[placeholder] = final
-                idx += 1
+            if count > 0:
+                ph_map[placeholder] = replacement_value
+                current_text = new_text
+                ph_index += 1
                 had_hits = True
 
-        return result, placeholder_map, had_hits
+        return current_text, ph_map, had_hits
 
-    def restore_placeholders(self, text: str, placeholder_map: dict) -> str:
-        """Sustituye los placeholders por el contenido del glosario."""
-        out = text
-        for ph, val in placeholder_map.items():
-            out = out.replace(ph, val)
-        return out
+    # ---------------------------------------------------------
+    # Restauración después de traducir
+    # ---------------------------------------------------------
+    def restore_placeholders(self, text: str, ph_map: Dict[str, str]) -> str:
+        result = text
+        for ph, value in ph_map.items():
+            result = result.rep
