@@ -1,0 +1,30 @@
+{
+    "name": "interprete-notepad-ui",
+    "version": "0.1.0",
+    "description": "Interpreter Notepad - Electron UI",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder"
+    },
+    "author": "Tu Nombre",
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "^26.0.0",
+        "electron-builder": "^24.0.0"
+    },
+    "build": {
+        "appId": "com.tuempresa.interpretenotepad",
+        "asar": false,
+        "files": [
+        "main.js",
+        "preload.js",
+        "public/**/*",
+        "api.js"
+        ],
+        "win": {
+        "target": "nsis"
+        }
+    }
+}
