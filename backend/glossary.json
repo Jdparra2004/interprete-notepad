@@ -378,5 +378,558 @@
         "term_en": "wisdom tooth",
         "aliases_es": [],
         "aliases_en": []
+    },
+    {
+        "term_es": "ampolla",
+        "term_en": "blister",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "parche",
+        "term_en": "blotch / spot",
+        "aliases_es": ["mancha"],
+        "aliases_en": ["spot"]
+    },
+    {
+        "term_es": "afta",
+        "term_en": "canker sore",
+        "aliases_es": ["postumilla"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cauterizar",
+        "term_en": "cauterize",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "herpes labial",
+        "term_en": "cold sore",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "dermis",
+        "term_en": "dermis",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "piel seca",
+        "term_en": "dry skin",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "eczema",
+        "term_en": "eczema",
+        "aliases_es": ["dermatitis atópica"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "epidermis",
+        "term_en": "epidermis",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "erupción",
+        "term_en": "eruption",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "pecas",
+        "term_en": "freckles",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "gangrena",
+        "term_en": "gangrene",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "folículo piloso",
+        "term_en": "hair follicle",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "uñero",
+        "term_en": "hangnail",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "uña encarnada",
+        "term_en": "ingrown toenail",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "melanoma",
+        "term_en": "melanoma",
+        "aliases_es": ["cáncer de piel"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "crema humectante",
+        "term_en": "moisturizing cream",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "onicomicosis",
+        "term_en": "onychomycosis",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "fototerapia",
+        "term_en": "phototherapy",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "poros",
+        "term_en": "pores",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "psoriasis",
+        "term_en": "psoriasis",
+        "aliases_es": ["soriasis"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "sarpullido",
+        "term_en": "rash",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "tiña",
+        "term_en": "ringworm",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "rosácea",
+        "term_en": "rosacea",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "glándula sebácea",
+        "term_en": "sebaceous gland",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "sarna",
+        "term_en": "scabies",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cuero cabelludo",
+        "term_en": "scalp",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "piel escamosa",
+        "term_en": "scaly skin",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cultivo de piel",
+        "term_en": "skin culture",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "capas de la piel",
+        "term_en": "skin layers",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "papiloma cutáneo",
+        "term_en": "skin tags",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "estrías",
+        "term_en": "stretch marks",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "filtro solar",
+        "term_en": "sun screen",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "quemadura de sol",
+        "term_en": "sunburn",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "glándula sudorípara",
+        "term_en": "sweat gland",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "ampolla",
+        "term_en": "vesicle",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "verrugas",
+        "term_en": "warts",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "arrugas",
+        "term_en": "wrinkles",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "reflujo ácido",
+        "term_en": "acid reflux",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "ano",
+        "term_en": "anus",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "colon ascendente",
+        "term_en": "ascending colon",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "bilis",
+        "term_en": "bile",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "conducto biliar",
+        "term_en": "biliary duct",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "intestinos",
+        "term_en": "bowels",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "carbohidratos",
+        "term_en": "carbohydrates",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "ciego",
+        "term_en": "cecum",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "colon",
+        "term_en": "colon",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "colon descendente",
+        "term_en": "descending colon",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "tubo digestivo",
+        "term_en": "digestive tube",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "duodeno",
+        "term_en": "duodenum",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "enzimas",
+        "term_en": "enzymes",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "esófago",
+        "term_en": "esophagus",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "grasa",
+        "term_en": "fat",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "fibra",
+        "term_en": "fiber",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "vesícula biliar",
+        "term_en": "gallbladder",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "piedras en la vesícula",
+        "term_en": "gallstones",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "mucosa gástrica",
+        "term_en": "gastric mucus",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "intestino grueso",
+        "term_en": "large intestine",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "hígado",
+        "term_en": "liver",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "enzimas hepáticas",
+        "term_en": "liver enzymes",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "páncreas",
+        "term_en": "pancreas",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "glándulas parótidas",
+        "term_en": "parotid glands",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "proteína",
+        "term_en": "protein",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "recto",
+        "term_en": "rectum",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "saliva",
+        "term_en": "saliva",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "glándulas salivales",
+        "term_en": "salivary glands",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "sigmoide",
+        "term_en": "sigmoid",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "intestino delgado",
+        "term_en": "small intestine",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "esfínter",
+        "term_en": "sphincter",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "estómago",
+        "term_en": "stomach",
+        "aliases_es": ["estomago"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "ácido estomacal",
+        "term_en": "stomach acid",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "colon transversal",
+        "term_en": "transverse colon",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "glándula suprarrenal",
+        "term_en": "adrenal gland",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "hipotálamo",
+        "term_en": "hypothalamus",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "páncreas",
+        "term_en": "pancreas",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "glándula paratiroides",
+        "term_en": "parathyroid gland",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "glándula pineal",
+        "term_en": "pineal gland",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "glándula pituitaria",
+        "term_en": "pituitary gland",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "pubertad",
+        "term_en": "puberty",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "timo",
+        "term_en": "thymus",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "glándula tiroides",
+        "term_en": "thyroid gland",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "adrenalina",
+        "term_en": "adrenaline",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cortisol",
+        "term_en": "cortisol",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "dopamina",
+        "term_en": "dopamine",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "estrógeno",
+        "term_en": "estrogen",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "hormona del crecimiento humano",
+        "term_en": "human growth hormone",
+        "aliases_es": ["hormona del crecimiento"],
+        "aliases_en": [],
+        "acronym": "HGH"
+    },
+    {
+        "term_es": "insulina",
+        "term_en": "insulin",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "neurotransmisor",
+        "term_en": "neurotransmitter",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "progesterona",
+        "term_en": "progesterone",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "prolactina",
+        "term_en": "prolactine",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "serotonina",
+        "term_en": "serotonin",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "testosterona",
+        "term_en": "testosterone",
+        "aliases_es": [],
+        "aliases_en": []
     }
 ]
