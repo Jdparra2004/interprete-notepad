@@ -1,0 +1,2212 @@
+[
+    {
+        "term_es": "cavidad abdominal",
+        "term_en": "abdominal cavity",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "axila",
+        "term_en": "armpit",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "brazos",
+        "term_en": "arms",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "barriga",
+        "term_en": "belly",
+        "aliases_es": ["vientre"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "senos",
+        "term_en": "breast",
+        "aliases_es": ["mamas"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "pantorrilla",
+        "term_en": "calf",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "pecho",
+        "term_en": "chest",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "mentón",
+        "term_en": "chin",
+        "aliases_es": ["barbilla"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "entrepierna",
+        "term_en": "crotch",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "tímpano",
+        "term_en": "eardrum",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "lóbulo",
+        "term_en": "earlobe",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "pies",
+        "term_en": "feet",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "dedos de la mano",
+        "term_en": "fingers",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "fontanela",
+        "term_en": "fontanella / crown of the head",
+        "aliases_es": ["mollera"],
+        "aliases_en": ["crown of the head"]
+    },
+    {
+        "term_es": "antebrazo",
+        "term_en": "forearm",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "frente",
+        "term_en": "forehead",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "ingle",
+        "term_en": "groin",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cadera",
+        "term_en": "hip",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "oído interno",
+        "term_en": "inner ear",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "mandíbula",
+        "term_en": "jaw",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+
+    {
+        "term_es": "aorta",
+        "term_en": "aorta",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "paredes arteriales",
+        "term_en": "arterial walls",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "arterias",
+        "term_en": "arteries",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "aurícula",
+        "term_en": "atrium",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "sangrado",
+        "term_en": "bleeding",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "vasos sanguíneos",
+        "term_en": "blood vessels",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "capilares",
+        "term_en": "capillaries",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "dióxido de carbono",
+        "term_en": "carbon dioxide",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "arteria carótida",
+        "term_en": "carotid artery",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "arteria celíaca",
+        "term_en": "celiac artery",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "coagulación",
+        "term_en": "clotting",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "arteria coronaria",
+        "term_en": "coronary artery",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "arteria femoral",
+        "term_en": "femoral artery",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "latido cardíaco",
+        "term_en": "heartbeat",
+        "aliases_es": ["latido del corazón"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "ritmo cardíaco",
+        "term_en": "heart rhythm",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "válvula cardíaca",
+        "term_en": "heart valve",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "arteria ilíaca",
+        "term_en": "iliac artery",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "arteria mesentérica",
+        "term_en": "mesenteric artery",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "miocardio",
+        "term_en": "myocardium",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "dientes de leche",
+        "term_en": "baby teeth",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "canino",
+        "term_en": "canine",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "caries dental",
+        "term_en": "cavity",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "diente astillado",
+        "term_en": "chipped tooth",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "limpieza",
+        "term_en": "cleaning",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "corona",
+        "term_en": "crown",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "frenillos dentales",
+        "term_en": "dental braces",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "puente dental",
+        "term_en": "dental bridge",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "hilo dental",
+        "term_en": "dental floss",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "dentadura postiza",
+        "term_en": "dentures",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "esmalte",
+        "term_en": "enamel",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "endodoncia",
+        "term_en": "endodontics",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "relleno dental",
+        "term_en": "filling",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "fluoruro",
+        "term_en": "fluoride",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "hacer gárgaras",
+        "term_en": "gargle",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "guarda dental",
+        "term_en": "mouthguard",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "enjuague bucal",
+        "term_en": "mouthwash",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "enfermedad periodontal",
+        "term_en": "periodontal disease",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "placa bacteriana",
+        "term_en": "plaque",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "porcelana",
+        "term_en": "porcelain",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "tratamiento de conducto",
+        "term_en": "root canal",
+        "aliases_es": ["endodoncia"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "articulación temporomandibular",
+        "term_en": "temporomandibular joint",
+        "aliases_es": [],
+        "aliases_en": [],
+        "acronym": "TMJ"
+    },
+    {
+        "term_es": "pasta dental",
+        "term_en": "toothpaste",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "muela del juicio",
+        "term_en": "wisdom tooth",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "ampolla",
+        "term_en": "blister",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "parche",
+        "term_en": "blotch / spot",
+        "aliases_es": ["mancha"],
+        "aliases_en": ["spot"]
+    },
+    {
+        "term_es": "afta",
+        "term_en": "canker sore",
+        "aliases_es": ["postumilla"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cauterizar",
+        "term_en": "cauterize",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "herpes labial",
+        "term_en": "cold sore",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "dermis",
+        "term_en": "dermis",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "piel seca",
+        "term_en": "dry skin",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "eczema",
+        "term_en": "eczema",
+        "aliases_es": ["dermatitis atópica"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "epidermis",
+        "term_en": "epidermis",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "erupción",
+        "term_en": "eruption",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "pecas",
+        "term_en": "freckles",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "gangrena",
+        "term_en": "gangrene",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "folículo piloso",
+        "term_en": "hair follicle",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "uñero",
+        "term_en": "hangnail",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "uña encarnada",
+        "term_en": "ingrown toenail",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "melanoma",
+        "term_en": "melanoma",
+        "aliases_es": ["cáncer de piel"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "crema humectante",
+        "term_en": "moisturizing cream",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "onicomicosis",
+        "term_en": "onychomycosis",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "fototerapia",
+        "term_en": "phototherapy",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "poros",
+        "term_en": "pores",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "psoriasis",
+        "term_en": "psoriasis",
+        "aliases_es": ["soriasis"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "sarpullido",
+        "term_en": "rash",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "tiña",
+        "term_en": "ringworm",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "rosácea",
+        "term_en": "rosacea",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "glándula sebácea",
+        "term_en": "sebaceous gland",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "sarna",
+        "term_en": "scabies",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cuero cabelludo",
+        "term_en": "scalp",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "piel escamosa",
+        "term_en": "scaly skin",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cultivo de piel",
+        "term_en": "skin culture",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "capas de la piel",
+        "term_en": "skin layers",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "papiloma cutáneo",
+        "term_en": "skin tags",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "estrías",
+        "term_en": "stretch marks",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "filtro solar",
+        "term_en": "sun screen",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "quemadura de sol",
+        "term_en": "sunburn",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "glándula sudorípara",
+        "term_en": "sweat gland",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "ampolla",
+        "term_en": "vesicle",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "verrugas",
+        "term_en": "warts",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "arrugas",
+        "term_en": "wrinkles",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "reflujo ácido",
+        "term_en": "acid reflux",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "ano",
+        "term_en": "anus",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "colon ascendente",
+        "term_en": "ascending colon",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "bilis",
+        "term_en": "bile",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "conducto biliar",
+        "term_en": "biliary duct",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "intestinos",
+        "term_en": "bowels",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "carbohidratos",
+        "term_en": "carbohydrates",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "ciego",
+        "term_en": "cecum",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "colon",
+        "term_en": "colon",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "colon descendente",
+        "term_en": "descending colon",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "tubo digestivo",
+        "term_en": "digestive tube",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "duodeno",
+        "term_en": "duodenum",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "enzimas",
+        "term_en": "enzymes",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "esófago",
+        "term_en": "esophagus",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "grasa",
+        "term_en": "fat",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "fibra",
+        "term_en": "fiber",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "vesícula biliar",
+        "term_en": "gallbladder",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "piedras en la vesícula",
+        "term_en": "gallstones",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "mucosa gástrica",
+        "term_en": "gastric mucus",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "intestino grueso",
+        "term_en": "large intestine",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "hígado",
+        "term_en": "liver",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "enzimas hepáticas",
+        "term_en": "liver enzymes",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "páncreas",
+        "term_en": "pancreas",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "glándulas parótidas",
+        "term_en": "parotid glands",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "proteína",
+        "term_en": "protein",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "recto",
+        "term_en": "rectum",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "saliva",
+        "term_en": "saliva",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "glándulas salivales",
+        "term_en": "salivary glands",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "sigmoide",
+        "term_en": "sigmoid",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "intestino delgado",
+        "term_en": "small intestine",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "esfínter",
+        "term_en": "sphincter",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "estómago",
+        "term_en": "stomach",
+        "aliases_es": ["estomago"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "ácido estomacal",
+        "term_en": "stomach acid",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "colon transversal",
+        "term_en": "transverse colon",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "glándula suprarrenal",
+        "term_en": "adrenal gland",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "hipotálamo",
+        "term_en": "hypothalamus",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "páncreas",
+        "term_en": "pancreas",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "glándula paratiroides",
+        "term_en": "parathyroid gland",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "glándula pineal",
+        "term_en": "pineal gland",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "glándula pituitaria",
+        "term_en": "pituitary gland",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "pubertad",
+        "term_en": "puberty",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "timo",
+        "term_en": "thymus",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "glándula tiroides",
+        "term_en": "thyroid gland",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "adrenalina",
+        "term_en": "adrenaline",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cortisol",
+        "term_en": "cortisol",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "dopamina",
+        "term_en": "dopamine",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "estrógeno",
+        "term_en": "estrogen",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "hormona del crecimiento humano",
+        "term_en": "human growth hormone",
+        "aliases_es": ["hormona del crecimiento"],
+        "aliases_en": [],
+        "acronym": "HGH"
+    },
+    {
+        "term_es": "insulina",
+        "term_en": "insulin",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "neurotransmisor",
+        "term_en": "neurotransmitter",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "progesterona",
+        "term_en": "progesterone",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "prolactina",
+        "term_en": "prolactine",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "serotonina",
+        "term_en": "serotonin",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "testosterona",
+        "term_en": "testosterone",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "albinismo",
+        "term_en": "albinism",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "aminoácidos",
+        "term_en": "amino acids",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "amniocentesis",
+        "term_en": "amniocentesis",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "portador",
+        "term_en": "carrier",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cromosomas",
+        "term_en": "chromosomes",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "daltonismo",
+        "term_en": "color blindness",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "enfermedad congénita",
+        "term_en": "congenital disease",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "ácido desoxirribonucleico",
+        "term_en": "deoxyribonucleic acid",
+        "aliases_es": ["ADN"],
+        "aliases_en": ["DNA"],
+        "acronym": "DNA"
+    },
+    {
+        "term_es": "síndrome de down",
+        "term_en": "down syndrome",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "gameto",
+        "term_en": "gamete",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "gen",
+        "term_en": "gene",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "defectos genéticos",
+        "term_en": "genetic defects",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "genoma",
+        "term_en": "genome",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "genotipo",
+        "term_en": "genotype",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "heredar",
+        "term_en": "inherit",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "mitocondria",
+        "term_en": "mitochondria",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "moléculas",
+        "term_en": "molecules",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "multicelular",
+        "term_en": "multicellular",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "mutación",
+        "term_en": "mutation",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "núcleo",
+        "term_en": "nucleus",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "óvulo",
+        "term_en": "ovum / ova",
+        "aliases_es": [],
+        "aliases_en": ["ovum", "ova"]
+    },
+    {
+        "term_es": "fenotipo",
+        "term_en": "phenotype",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "gen recesivo",
+        "term_en": "recessive gene",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "anemia de células falciformes",
+        "term_en": "sickle cell anemia",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "esperma",
+        "term_en": "sperm",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "unicelular",
+        "term_en": "unicellular",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "adenoides",
+        "term_en": "adenoids",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "anticuerpos",
+        "term_en": "antibodies",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "apéndice",
+        "term_en": "appendix",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "autoinmune",
+        "term_en": "autoimmune",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "células b",
+        "term_en": "b-cells",
+        "aliases_es": [],
+        "aliases_en": ["b cells", "b lymphocytes"]
+    },
+    {
+        "term_es": "médula ósea",
+        "term_en": "bone marrow",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "ganglios linfáticos",
+        "term_en": "lymph nodes",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "vasos linfáticos",
+        "term_en": "lymph vessels",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "linfocitos",
+        "term_en": "lymphocytes",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "linfoma",
+        "term_en": "lymphoma",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "piel",
+        "term_en": "skin",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "bazo",
+        "term_en": "spleen",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "células t",
+        "term_en": "t-cells",
+        "aliases_es": [],
+        "aliases_en": ["t cells", "t lymphocytes"]
+    },
+    {
+        "term_es": "timo",
+        "term_en": "thymus",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "amígdalas",
+        "term_en": "tonsils",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "tendón de aquiles",
+        "term_en": "achilles tendon",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "bíceps",
+        "term_en": "biceps",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "glúteos",
+        "term_en": "buttocks",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "gemelos",
+        "term_en": "calf",
+        "aliases_es": ["pantorrilla"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "músculo cardíaco",
+        "term_en": "cardiac muscle",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "deltoides",
+        "term_en": "deltoid",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "diafragma",
+        "term_en": "diaphragm",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "isquiotibiales",
+        "term_en": "hamstrings",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cuádriceps",
+        "term_en": "quadriceps",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "manguito rotador",
+        "term_en": "rotating cuff",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "músculo esquelético",
+        "term_en": "skeletal muscle",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "músculo liso",
+        "term_en": "smooth muscle",
+        "aliases_es": ["músculo suave"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "sóleo",
+        "term_en": "soleum",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "esguince",
+        "term_en": "sprain",
+        "aliases_es": ["torcedura"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "distensión",
+        "term_en": "strain",
+        "aliases_es": ["lesión en músculo o tendón"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "músculo distendido",
+        "term_en": "strained muscle",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "músculo desgarrado",
+        "term_en": "torn muscle",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "tríceps",
+        "term_en": "triceps",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cerebro",
+        "term_en": "brain",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "tallo cerebral",
+        "term_en": "brainstem",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "túnel carpiano",
+        "term_en": "carpal tunnel",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "sistema nervioso central",
+        "term_en": "central nervous system",
+        "aliases_es": [],
+        "aliases_en": [],
+        "acronym": "CNS"
+    },
+    {
+        "term_es": "cerebelo",
+        "term_en": "cerebellum",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "corteza cerebral",
+        "term_en": "cerebral cortex",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cráneo",
+        "term_en": "craneum / skull",
+        "aliases_es": [],
+        "aliases_en": ["skull"]
+    },
+    {
+        "term_es": "duramadre",
+        "term_en": "dura mater",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "hemisferios",
+        "term_en": "hemispheres",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "lóbulos",
+        "term_en": "lobes",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "neuronas motoras",
+        "term_en": "motor neurons",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "nervios",
+        "term_en": "nerves",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "conexiones neuronales",
+        "term_en": "neural connections",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "neuronas",
+        "term_en": "neurons",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "sistema nervioso periférico",
+        "term_en": "peripheral nervous system",
+        "aliases_es": [],
+        "aliases_en": [],
+        "acronym": "PNS"
+    },
+    {
+        "term_es": "glándula pituitaria",
+        "term_en": "pituitary gland",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "convulsión",
+        "term_en": "seizure",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "neuronas sensitivas",
+        "term_en": "sensory neurons",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "nervio ciático",
+        "term_en": "sciatic nerve",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "médula espinal",
+        "term_en": "spinal cord",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "líquido cefalorraquídeo",
+        "term_en": "spinal fluid",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "sistema nervioso vegetativo",
+        "term_en": "vegetative (involuntary) nervous system",
+        "aliases_es": ["sistema nervioso involuntario"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "vértebras",
+        "term_en": "vertebrae",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "sistema nervioso voluntario",
+        "term_en": "voluntary nervous system",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "aborto espontáneo",
+        "term_en": "miscarriage",
+        "aliases_es": ["pérdida del embarazo"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "trabajo de parto",
+        "term_en": "labor",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "contracciones",
+        "term_en": "contractions",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cesárea",
+        "term_en": "c-section",
+        "aliases_es": ["cesaria"],
+        "aliases_en": ["cesarean section"]
+    },
+    {
+        "term_es": "trinquete ginecológico",
+        "term_en": "speculum",
+        "aliases_es": ["especulo"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cérvix",
+        "term_en": "cervix",
+        "aliases_es": ["cuello uterino"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "ovulación",
+        "term_en": "ovulation",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "óvulo",
+        "term_en": "egg",
+        "aliases_es": ["ovocito"],
+        "aliases_en": ["ovum"]
+    },
+    {
+        "term_es": "fecundación",
+        "term_en": "fertilization",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "embarazo",
+        "term_en": "pregnancy",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "útero",
+        "term_en": "uterus",
+        "aliases_es": ["matriz"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "vagina",
+        "term_en": "vagina",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "canal de parto",
+        "term_en": "birth canal",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "flujo vaginal",
+        "term_en": "vaginal discharge",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "mastitis",
+        "term_en": "mastitis",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "menopausia",
+        "term_en": "menopause",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "periodo menstrual",
+        "term_en": "menstrual period",
+        "aliases_es": ["menstruación"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "ovarios",
+        "term_en": "ovaries",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "papanicolau",
+        "term_en": "pap smear",
+        "aliases_es": ["citología", "prueba de pap"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "pene",
+        "term_en": "penis",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "próstata",
+        "term_en": "prostate",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "astigmatismo",
+        "term_en": "astigmatism",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "conjuntiva",
+        "term_en": "conjunctiva",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "conjuntivitis",
+        "term_en": "conjunctivitis",
+        "aliases_es": ["ojo rojo"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "córnea",
+        "term_en": "cornea",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "párpado",
+        "term_en": "eyelid",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "visión borrosa",
+        "term_en": "blurry vision",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "filtro de fluoresceína",
+        "term_en": "fluorescent dye test",
+        "aliases_es": ["prueba de fluoresceína"],
+        "aliases_en": ["fluorescein test"]
+    },
+    {
+        "term_es": "lentes de contacto",
+        "term_en": "contact lenses",
+        "aliases_es": ["lentes de contacto"],
+        "aliases_en": ["contacts"]
+    },
+    {
+        "term_es": "catarata",
+        "term_en": "cataract",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "punto ciego",
+        "term_en": "blind spot",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "visión doble",
+        "term_en": "double vision",
+        "aliases_es": ["diplopía"],
+        "aliases_en": ["diplopia"]
+    },
+    {
+        "term_es": "pupila",
+        "term_en": "pupil",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "retina",
+        "term_en": "retina",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "glaucoma",
+        "term_en": "glaucoma",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "visión periférica",
+        "term_en": "peripheral vision",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "miopía",
+        "term_en": "myopia",
+        "aliases_es": ["vista corta"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "hipermetropía",
+        "term_en": "hyperopia",
+        "aliases_es": ["vista larga"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "absceso",
+        "term_en": "abscess",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "acné",
+        "term_en": "acne",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "alergia",
+        "term_en": "allergy",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "alzhéimer",
+        "term_en": "alzheimer's",
+        "aliases_es": ["alzheimer"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "artritis",
+        "term_en": "arthritis",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "asma",
+        "term_en": "asthma",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cáncer",
+        "term_en": "cancer",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "tos crónica",
+        "term_en": "chronic cough",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "enfermedad congestiva del corazón",
+        "term_en": "congestive heart disease",
+        "aliases_es": ["insuficiencia cardíaca congestiva"],
+        "aliases_en": [],
+        "acronym": "CHD"
+    },
+    {
+        "term_es": "diabetes tipo 1",
+        "term_en": "type 1 diabetes",
+        "aliases_es": ["diabetes juvenil"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "diabetes tipo 2",
+        "term_en": "type 2 diabetes",
+        "aliases_es": ["diabetes del adulto"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "enfermedad periodontal",
+        "term_en": "periodontal disease",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "fiebre",
+        "term_en": "fever",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "fractura",
+        "term_en": "fracture",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "gastritis",
+        "term_en": "gastritis",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "infarto",
+        "term_en": "heart attack",
+        "aliases_es": ["ataque al corazón", "ataque cardíaco"],
+        "aliases_en": ["myocardial infarction"],
+        "acronym": "MI"
+    },
+    {
+        "term_es": "hepatitis",
+        "term_en": "hepatitis",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "infección",
+        "term_en": "infection",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "inflamación",
+        "term_en": "inflammation",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "lesión",
+        "term_en": "injury",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "neumonía",
+        "term_en": "pneumonia",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "osteoporosis",
+        "term_en": "osteoporosis",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "diabetes gestacional",
+        "term_en": "gestational diabetes",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "dermatitis",
+        "term_en": "dermatitis",
+        "aliases_es": ["eccema"],
+        "aliases_en": ["eczema"]
+    },
+    {
+        "term_es": "abuso de sustancias",
+        "term_en": "substance abuse",
+        "aliases_es": ["uso problemático de sustancias"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "adicción",
+        "term_en": "addiction",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "agorafobia",
+        "term_en": "agoraphobia",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "ansiedad",
+        "term_en": "anxiety",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "ataque de pánico",
+        "term_en": "panic attack",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "trastorno bipolar",
+        "term_en": "bipolar disorder",
+        "aliases_es": [],
+        "aliases_en": [],
+        "acronym": "BD"
+    },
+    {
+        "term_es": "depresión mayor",
+        "term_en": "major depression",
+        "aliases_es": ["depresión clínica"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "tristeza",
+        "term_en": "sadness",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "trastorno obsesivo compulsivo",
+        "term_en": "obsessive-compulsive disorder",
+        "aliases_es": ["trastorno obsesivo-compulsivo"],
+        "aliases_en": [],
+        "acronym": "OCD"
+    },
+    {
+        "term_es": "trastorno de estrés postraumático",
+        "term_en": "post-traumatic stress disorder",
+        "aliases_es": ["estrés postraumático"],
+        "aliases_en": [],
+        "acronym": "PTSD"
+    },
+    {
+        "term_es": "psicoterapia",
+        "term_en": "psychotherapy",
+        "aliases_es": ["terapia psicológica"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "alucinación",
+        "term_en": "hallucination",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "esquizofrenia",
+        "term_en": "schizophrenia",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "trastorno de alimentación",
+        "term_en": "eating disorder",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "anorexia nerviosa",
+        "term_en": "anorexia nervosa",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "bulimia nerviosa",
+        "term_en": "bulimia nervosa",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "pediatría",
+        "term_en": "pediatrics",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "recién nacido",
+        "term_en": "newborn",
+        "aliases_es": ["neonato"],
+        "aliases_en": ["neonate"]
+    },
+    {
+        "term_es": "niño",
+        "term_en": "child",
+        "aliases_es": ["infante"],
+        "aliases_en": ["kid"]
+    },
+    {
+        "term_es": "aparato ortopédico",
+        "term_en": "brace",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "sarampión",
+        "term_en": "measles",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "paperas",
+        "term_en": "mumps",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "varicela",
+        "term_en": "chickenpox",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "tos ferina",
+        "term_en": "whooping cough",
+        "aliases_es": [],
+        "aliases_en": ["pertussis"]
+    },
+    {
+        "term_es": "vacuna",
+        "term_en": "vaccine",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cartilla de vacunación",
+        "term_en": "vaccination card",
+        "aliases_es": ["carné de vacunas"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "radiografía",
+        "term_en": "x-ray",
+        "aliases_es": ["placa"],
+        "aliases_en": ["radiograph"]
+    },
+    {
+        "term_es": "resonancia magnética",
+        "term_en": "magnetic resonance imaging",
+        "aliases_es": ["resonancia"],
+        "aliases_en": [],
+        "acronym": "MRI"
+    },
+    {
+        "term_es": "tomografía computarizada",
+        "term_en": "computed tomography",
+        "aliases_es": ["TAC", "tomografía"],
+        "aliases_en": [],
+        "acronym": "CT"
+    },
+    {
+        "term_es": "ecografía",
+        "term_en": "ultrasound",
+        "aliases_es": ["ultrasonido", "ecografía"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "radiación",
+        "term_en": "radiation",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "placa torácica",
+        "term_en": "chest x-ray",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "imagenología",
+        "term_en": "imaging",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "medio de contraste",
+        "term_en": "contrast medium",
+        "aliases_es": ["contraste"],
+        "aliases_en": ["contrast agent"]
+    },
+    {
+        "term_es": "alvéolos",
+        "term_en": "alveoli",
+        "aliases_es": ["alvélos"],
+        "aliases_en": ["alveolus (singular)"]
+    },
+    {
+        "term_es": "asma",
+        "term_en": "asthma",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "bronquiolos",
+        "term_en": "bronchioles",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "bronquios",
+        "term_en": "bronchi",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "bronquitis",
+        "term_en": "bronchitis",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "diafragma",
+        "term_en": "diaphragm",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "epiglotis",
+        "term_en": "epiglottis",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "gripe",
+        "term_en": "flu",
+        "aliases_es": ["influenza"],
+        "aliases_en": ["influenza"]
+    },
+    {
+        "term_es": "inhalador",
+        "term_en": "inhaler",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "laringitis",
+        "term_en": "laryngitis",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "laringe",
+        "term_en": "larynx",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "neumonía",
+        "term_en": "pneumonia",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "neumotórax",
+        "term_en": "pneumothorax",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "pulmones",
+        "term_en": "lungs",
+        "aliases_es": ["pulmón"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "moco",
+        "term_en": "mucus",
+        "aliases_es": ["flema"],
+        "aliases_en": ["phlegm"]
+    },
+    {
+        "term_es": "nariz",
+        "term_en": "nose",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "oxígeno",
+        "term_en": "oxygen",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "senos paranasales",
+        "term_en": "sinuses",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "estornudo",
+        "term_en": "sneeze",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "faringe",
+        "term_en": "throat",
+        "aliases_es": [],
+        "aliases_en": ["pharynx"]
+    },
+    {
+        "term_es": "tráquea",
+        "term_en": "trachea",
+        "aliases_es": ["traquea"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "vejiga",
+        "term_en": "bladder",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "insuficiencia renal",
+        "term_en": "kidney failure",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "cálculos renales",
+        "term_en": "kidney stones",
+        "aliases_es": ["piedras en los riñones"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "riñón",
+        "term_en": "kidney",
+        "aliases_es": ["riñones"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "orina",
+        "term_en": "urine",
+        "aliases_es": ["pis"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "examen de orina",
+        "term_en": "urine test",
+        "aliases_es": ["uroanálisis"],
+        "aliases_en": ["urinalysis"]
+    },
+    {
+        "term_es": "uretra",
+        "term_en": "urethra",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "uréter",
+        "term_en": "ureter",
+        "aliases_es": ["uréteres"],
+        "aliases_en": []
+    },
+    {
+        "term_es": "incontinencia urinaria",
+        "term_en": "urinary incontinence",
+        "aliases_es": [],
+        "aliases_en": []
+    },
+    {
+        "term_es": "infección urinaria",
+        "term_en": "urinary tract infection",
+        "aliases_es": ["infección del tracto urinario"],
+        "aliases_en": [],
+        "acronym": "UTI"
+    },
+    {
+        "term_es": "vías urinarias",
+        "term_en": "urinary tract",
+        "aliases_es": ["tracto urinario"],
+        "aliases_en": []
+    }
+]
