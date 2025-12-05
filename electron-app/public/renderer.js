@@ -1,3 +1,10 @@
+// Validar conexión Backend
+fetch("http://127.0.0.1:5000/health")
+    .then(r => r.json())
+    .then(data => console.log("Backend conectado:", data))
+    .catch(err => console.error("Error conectando al backend:", err));
+
+
 // renderer.js (browser context)
 const API_BASE = "http://127.0.0.1:5000";
 
