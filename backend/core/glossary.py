@@ -64,62 +64,69 @@ class Glossary:
 
     def apply_placeholders(self, text: str, src_lang: str):
         """
-        Reemplaza términos (según src_lang) por placeholders.
-        Retorna (text_with_placeholders, placeholder_map)
-        placeholder_map: { placeholder: replacement_final_string }
+        Replace glossary terms with placeholders.
+        src_lang = 'es' or 'en'
+        Returns: (text_with_placeholders, placeholder_map, had_hits)
         """
+        if not isinstance(text, str) or not text.strip():
+            return text, {}, False
+
         placeholder_map = {}
-        text_out = text
-        used = set()
-        idx = 0
+        had_hits = False
+        result = text
 
-        # Iterate compiled patterns; for each match, only if pattern's lang aligns with src_lang (or acronym)
-        for pat, entry, lang in self.compiled:
-            # decide if we should match this pattern given detected source language
-            # if src_lang == 'es': we want to match Spanish terms (lang == 'es')
-            # if src_lang == 'en': match English terms and acronyms (lang == 'en' or 'acronym')
-            match_allowed = False
-            if src_lang.lower() == "es" and lang == "es":
-                match_allowed = True
-            if src_lang.lower() == "en" and (lang == "en" or lang == "acronym"):
-                match_allowed = True
+        # Placeholder counter — MUST start at 1 consistently
+        ph_index = 1
 
-            if not match_allowed:
-                continue
+        # Detect direction
+        is_spanish = src_lang == "es"
+        is_english = src_lang == "en"
 
-            # Replacement function for re.sub
-            def _repl(m):
-                nonlocal idx, placeholder_map, used
-                span = m.group(0)
-                # avoid duplicate replacements for same exact span index: let re handle global replace
-                ph = self._generate_placeholder(idx)
-                # Compute final replacement depending on direction
-                if src_lang.lower() == "es":
-                    # Spanish input -> want English output; prefer ACRONYM (ACR (term_en)) if acronym exists
-                    acr = (entry.get("acronym") or "").strip()
-                    term_en = entry.get("term_en") or ""
-                    if acr:
-                        repl_value = f"{acr} ({term_en})" if term_en else acr
-                    else:
-                        repl_value = term_en or span
-                else:  # src_lang == "en"
-                    # English input -> want Spanish output
-                    term_es = entry.get("term_es") or ""
-                    # If entry is acronym-only mapping (acronym->term_es), entry must have term_es
-                    repl_value = term_es or span
+        # Precompiled patterns inside the Glossary object avoid recreating them.
+        for item in self.terms:
 
-                placeholder_map[ph] = repl_value
-                idx += 1
-                return ph
+            # Extract info
+            term_es = item["term_es"]
+            term_en = item["term_en"]
+            acronym = item.get("acronym")
 
-            try:
-                # Use sub on current text_out; flags are already in compiled pattern
-                text_out = pat.sub(_repl, text_out)
-            except Exception:
-                continue
+            # Decide valid matches
+            if is_spanish:
+                # Spanish → match Spanish terms only
+                patterns = [
+                    getattr(item, "pattern_es_exact", None),
+                    getattr(item, "pattern_es_alias", None)
+                ]
+                final = f"{acronym} ({term_en})" if acronym else term_en
 
-        had_hits = len(placeholder_map) > 0
-        return text_out, placeholder_map, had_hits
+            else:
+                # English → match English terms + acronyms
+                patterns = [
+                    getattr(item, "pattern_en_exact", None),
+                    getattr(item, "pattern_en_alias", None),
+                    getattr(item, "pattern_acronym", None)
+                ]
+                final = term_es
+
+            # Apply each pattern
+            for pattern in patterns:
+                if not pattern:
+                    continue
+
+                # Generate placeholder safely
+                placeholder = f"GLOSARIOPH{ph_index:04d}TOKEN"
+
+                # Replace
+                new_text, n = pattern.subn(placeholder, result)
+
+                if n > 0:
+                    placeholder_map[placeholder] = final
+                    ph_index += 1
+                    had_hits = True
+                    result = new_text
+
+        return result, placeholder_map, had_hits
+
 
     def restore_placeholders(self, text: str, placeholder_map: dict) -> str:
         out = text
