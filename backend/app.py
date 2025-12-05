@@ -17,7 +17,9 @@ import json
 import re
 import requests
 import logging
-from utils import normalize_spanish
+from core.pipeline import TranslationPipeline
+from core.glossary import Glossary
+
 
 # ---- Configuration / Defaults ----
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
