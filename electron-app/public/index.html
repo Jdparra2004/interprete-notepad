@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://127.0.0.1:5000; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Interpreter Notepad</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+    <body>
+    <div class="app">
+        <header>
+        <h1>Interpreter Notepad</h1>
+        <p class="subtitle">Notas rápidas con traducción clínica — listo para interpretación</p>
+        </header>
+
+        <section class="structure">
+        <div class="pane left">
+            <label>Opening (fijo)</label>
+            <textarea id="opening" class="fixed" readonly>Buenos días, mi nombre es ... (opening no se traduce)</textarea>
+
+            <label>Apuntes (escribe aquí)</label>
+            <textarea id="input" placeholder="Escribe la nota aquí... (Ctrl+Enter para traducir)"></textarea>
+
+            <div class="controls">
+            <button id="translateBtn">Traducir →</button>
+            <button id="clearBtn">Limpiar</button>
+            <label class="small"><input type="checkbox" id="useGlossary" checked> Usar glosario</label>
+            </div>
+
+            <label>Closing (fijo)</label>
+            <textarea id="closing" class="fixed" readonly>Gracias por la información. (closing no se traduce)</textarea>
+        </div>
+
+        <div class="pane right">
+            <label>Traducción</label>
+            <textarea id="output" readonly placeholder="La traducción aparecerá aquí..."></textarea>
+
+            <div class="meta">
+            <span id="langLabel">Idioma detectado: —</span>
+            <button id="copyBtn">Copiar</button>
+            </div>
+        </div>
+        </section>
+
+        <footer>
+        <small>Interprete Notepad — interfaz local · Conexión al backend en 127.0.0.1:5000</small>
+        </footer>
+    </div>
+
+    <script src="./renderer.js"></script>
+    </body>
+</html>
