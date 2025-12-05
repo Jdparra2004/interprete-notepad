@@ -16,3 +16,6 @@ dist/
 # Electron builder output
 electron-app/dist/
 electron-app/build/
+
+# API Key
+backend/config.json
