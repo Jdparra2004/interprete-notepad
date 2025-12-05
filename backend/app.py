@@ -136,7 +136,6 @@ def translate():
         "detected_source": detected_source
     }), 200
 
-
 # ---------------------------
 # Run
 # ---------------------------
