@@ -2,37 +2,52 @@
     {
         "term_es": "vía intravenosa",
         "term_en": "intravenous",
-        "acronym": "IV"
+        "acronym": "IV",
+        "aliases_es": ["via intravenosa"],
+        "aliases_en": ["intravenous therapy"]
     },
     {
         "term_es": "prueba de hemoglobina glicosilada",
-        "term_en": "A1C test"
+        "term_en": "A1C test",
+        "aliases_es": ["hemoglobina glicosilada", "prueba A1C"],
+        "aliases_en": ["glycated hemoglobin test"]
     },
     {
         "term_es": "acetaminofén",
-        "term_en": "acetaminophen"
+        "term_en": "acetaminophen",
+        "aliases_es": ["acetaminofen"],
+        "aliases_en": ["paracetamol"]
     },
     {
         "term_es": "índice de líquido amniótico",
         "term_en": "amniotic fluid index",
-        "acronym": "AFI"
+        "acronym": "AFI",
+        "aliases_es": ["índice de liquido amniotico"],
+        "aliases_en": ["amniotic index"]
     },
     {
         "term_es": "anemia",
-        "term_en": "anemia"
+        "term_en": "anemia",
+        "aliases_es": [],
+        "aliases_en": []
     },
     {
         "term_es": "revisión anual",
-        "term_en": "annual check-up"
+        "term_en": "annual check-up",
+        "aliases_es": ["control anual"],
+        "aliases_en": ["annual checkup"]
     },
     {
         "term_es": "artoplastía",
-        "term_en": "arthroplasty"
+        "term_en": "arthroplasty",
+        "aliases_es": ["artoplastia"],
+        "aliases_en": []
     },
     {
-        "term_en": "immediate attention",
         "term_es": "ATENCIÓN CRÍTICA",
-        "acronym": "IA"
+        "term_en": "immediate attention",
+        "acronym": "IA",
+        "aliases_es": ["atencion critica"],
+        "aliases_en": ["urgent attention"]
     }
-
 ]
