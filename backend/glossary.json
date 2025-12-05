@@ -42,12 +42,5 @@
         "term_en": "arthroplasty",
         "aliases_es": ["artoplastia"],
         "aliases_en": []
-    },
-    {
-        "term_es": "ATENCIÓN CRÍTICA",
-        "term_en": "immediate attention",
-        "acronym": "IA",
-        "aliases_es": ["atencion critica"],
-        "aliases_en": ["urgent attention"]
     }
 ]
