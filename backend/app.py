@@ -90,7 +90,6 @@ def detect_language_simple(text: str) -> str:
     # Default fallback
     return "es"
 
-
 # ---- Load glossary (flexible) ----
 # Internal normalized form: list of entries with keys:
 #   { "term_es": "...", "term_en": "...", "acronym": "..." }
@@ -155,7 +154,7 @@ _glossary_patterns.sort(key=lambda x: x[0], reverse=True)
 
 # ---- Placeholder helper ----
 def generate_placeholder(idx: int) -> str:
-    return f"<<<GL{idx}>>>"
+    return f"§§GLOSSARY_{idx}§§"
 
 # ---- Apply glossary replacements to text, returning (placeholder_text, mapping, detected_hits) ----
 def apply_glossary_placeholders(text: str, src_lang: str):
