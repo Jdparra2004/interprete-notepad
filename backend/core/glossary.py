@@ -4,140 +4,158 @@ import re
 import unicodedata
 from typing import List, Dict, Tuple
 
-# NOTE: usamos prints ligeros para debug rápido en consola; si prefieres logging sustitúyelos.
+
 def _norm(s: str) -> str:
+    """Normalize and strip strings to NFC."""
     if s is None:
         return ""
-    # Normalize to NFC to keep composed accents consistently
     return unicodedata.normalize("NFC", s.strip())
+
 
 class Glossary:
     """
-    Glossary robusto:
-      - Normaliza entradas y texto (NFC)
-      - Soporta ES->EN (con acrónimo) y EN->ES (incluye acrónimos)
-      - Evita placeholders huérfanos y captura errores sin romper la pipeline
+    Glossary:
+      ✓ Normaliza todo
+      ✓ Maneja acrónimos correctamente (EN→ES y ES→EN)
+      ✓ Evita falsos positivos
+      ✓ Respeta idioma fuente detectado
     """
 
     def __init__(self, entries: List[Dict]):
         self.entries = entries or []
-        self.compiled: List[Tuple[re.Pattern, Dict, str]] = []
-        try:
-            self._compile_all()
-        except Exception as e:
-            print("[glossary] compile error:", e)
-            self.compiled = []
+        self.compiled: List[Tuple[re.Pattern, Dict, str, str]] = []
+        self._compile_all()
 
-    def _make_variants(self, entry: Dict) -> List[Tuple[str, str]]:
+    # --------------------------------------------------
+    # Generate variants (ES, EN, acronyms + aliases)
+    # --------------------------------------------------
+    def _make_variants(self, entry: Dict) -> List[Tuple[str, str, str]]:
+        """
+        Returns list of (variant_text, variant_language, variant_type)
+        variant_type ∈ {"main", "alias", "acronym"}
+        """
         variants = []
 
-        te = entry.get("term_es", "").strip()
-        tn = entry.get("term_en", "").strip()
-        ac = (entry.get("acronym") or "").strip()
+        term_es = _norm(entry.get("term_es", ""))
+        term_en = _norm(entry.get("term_en", ""))
+        acronym = _norm(entry.get("acronym", ""))
 
-        # Spanish term
-        if te:
-            variants.append((te, "es"))
+        # Spanish main term
+        if term_es:
+            variants.append((term_es, "es", "main"))
 
-        # English term
-        if tn:
-            variants.append((tn, "en"))
+        # English main term
+        if term_en:
+            variants.append((term_en, "en", "main"))
 
-        # Acronym variations (robust)
-        if ac:
+        # Acronyms — must match both directions
+        if acronym:
             variants.extend([
-                (ac, "acronym"),
-                (ac.upper(), "acronym"),
-                (ac.lower(), "acronym")
+                (acronym, "acronym", "acronym"),
+                (acronym.upper(), "acronym", "acronym"),
+                (acronym.lower(), "acronym", "acronym"),
             ])
 
-        # Aliases
-        for a in entry.get("aliases_es", []) or []:
-            variants.append((a.strip(), "es"))
+        # Aliases ES
+        for a in entry.get("aliases_es", []):
+            a = _norm(a)
+            if a:
+                variants.append((a, "es", "alias"))
 
-        for a in entry.get("aliases_en", []) or []:
-            variants.append((a.strip(), "en"))
+        # Aliases EN
+        for a in entry.get("aliases_en", []):
+            a = _norm(a)
+            if a:
+                variants.append((a, "en", "alias"))
 
         return variants
 
-
+    # --------------------------------------------------
+    # Compile regex patterns
+    # --------------------------------------------------
     def _compile_all(self):
         self.compiled = []
+
         for entry in self.entries:
-            try:
-                for variant, lang_key in self._make_variants(entry):
-                    if not variant:
-                        continue
-                    # Use word boundaries; pattern matches on normalized strings.
-                    # We escape the variant to avoid regex injection.
-                    pattern = re.compile(
-                        rf"(?<![A-Za-z0-9]){re.escape(variant)}(?![A-Za-z0-9])",
-                        flags=re.IGNORECASE | re.UNICODE
-                    )
-                    self.compiled.append((pattern, entry, lang_key))
-            except Exception as e:
-                print("[glossary] compile entry failed:", e, "entry:", entry)
-                continue
+            for variant, lang, vtype in self._make_variants(entry):
+                pattern = re.compile(
+                    rf"(?<![A-Za-z0-9]){re.escape(variant)}(?![A-Za-z0-9])",
+                    flags=re.IGNORECASE | re.UNICODE
+                )
+                self.compiled.append((pattern, entry, lang, vtype))
 
-        # sort by pattern length (longer first) to match multi-word terms before shorter ones
-        self.compiled.sort(key=lambda t: -len(t[0].pattern))
+        # Prioritize multi‑word & longer matches
+        self.compiled.sort(key=lambda i: -len(i[0].pattern))
 
-    def _placeholder(self, idx: int) -> str:
+    # --------------------------------------------------
+    # Placeholders
+    # --------------------------------------------------
+    def _placeholder(self, idx: int):
         return f"GLOSARIOPH{idx:04d}TOKEN"
 
     def apply_placeholders(self, text: str, src_lang: str):
-        if not isinstance(text, str) or not text.strip():
+        """
+        Replace terms with placeholders.
+        src_lang: "en" or "es"
+        """
+        if not text:
             return text, {}, False
 
-        placeholder_map = {}
         result = text
-        ph_index = 1
+        placeholder_map = {}
+        idx = 1
         hits = False
 
-        is_spanish = src_lang == "es"
-        is_english = src_lang == "en"
+        for pattern, entry, variant_lang, vtype in self.compiled:
 
-        for pattern, entry, lang in self.compiled:
-
-            # Filtrar variantes que NO corresponden al idioma detectado
-            if is_spanish and lang != "es":
+            # Filter by detected language
+            if src_lang == "es" and variant_lang not in ("es",):
+                continue
+            if src_lang == "en" and variant_lang not in ("en", "acronym"):
                 continue
 
-            if is_english and lang not in ("en", "acronym"):
-                continue
+            term_es = _norm(entry.get("term_es", ""))
+            term_en = _norm(entry.get("term_en", ""))
+            ac = _norm(entry.get("acronym", ""))
 
-            # Definir valor final
-            term_es = entry.get("term_es", "")
-            term_en = entry.get("term_en", "")
-            ac = entry.get("acronym", "")
+            # -------------------------
+            # ES → EN + optional acronym
+            # -------------------------
+            if src_lang == "es":
+                if ac:
+                    # Example: "intravenosa" -> "IV (intravenous)"
+                    final = f"{ac} ({term_en})"
+                else:
+                    final = term_en
 
-            if is_spanish:
-                # ES → EN
-                final = f"{ac} ({term_en})" if ac else term_en
-            else:
-                # EN → ES (acronyms also map to Spanish term)
+            # -------------------------
+            # EN → ES (acronyms map too)
+            # -------------------------
+            else:  # src_lang == "en"
+                # Example: "IV" -> "vía intravenosa"
                 final = term_es
 
-            placeholder = f"GLOSARIOPH{ph_index:04d}TOKEN"
-            new_text, n = pattern.subn(placeholder, result)
+            # Apply replacement
+            new_result, n = pattern.subn(self._placeholder(idx), result)
 
             if n > 0:
                 hits = True
-                placeholder_map[placeholder] = final
-                ph_index += 1
-                result = new_text
+                placeholder_map[self._placeholder(idx)] = final
+                idx += 1
+                result = new_result
 
         return result, placeholder_map, hits
 
-
-    def restore_placeholders(self, text: str, placeholder_map: Dict[str, str]) -> str:
-        try:
-            if not placeholder_map:
-                return text
-            out = text
-            for ph, val in placeholder_map.items():
-                out = out.replace(ph, val)
-            return out
-        except Exception as e:
-            print("[glossary] restore_placeholders error:", e)
+    # --------------------------------------------------
+    # Restore placeholders
+    # --------------------------------------------------
+    def restore_placeholders(self, text: str, placeholder_map: Dict[str, str]):
+        if not placeholder_map:
             return text
+        for ph, val in placeholder_map.items():
+            text = text.replace(ph, val)
+        return text
+
+    # For /health endpoint
+    def size(self):
+        return len(self.entries)

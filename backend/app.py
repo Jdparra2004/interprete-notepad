@@ -139,13 +139,20 @@ def translate():
 @app.post("/debug_glossary")
 def debug_glossary():
     data = request.json.get("text", "")
-    pre, mapping, hits = glossary.apply_placeholders(data, "en")
+    
+    # detectar idioma correctamente
+    src = pipeline.detect_language_simple(data)
+
+    pre, mapping, hits = glossary.apply_placeholders(data, src)
+
     return {
         "input": data,
+        "detected_lang": src,
         "pre_with_placeholders": pre,
         "mapping": mapping,
         "hits": hits
     }
+
 
 
 # ---------------------------
