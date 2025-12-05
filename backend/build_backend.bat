@@ -1,30 +1,57 @@
 @echo off
-REM -------------------------------------------------------
+REM =======================================================
 REM build_backend.bat
-REM Ejecutar desde backend\ 
-REM Asegúrate de activar venv antes de ejecutar este script
-REM -------------------------------------------------------
+REM Debes ejecutarlo desde:  Interpreter_Function\backend\
+REM El venv debe existir en backend\venv
+REM =======================================================
 
-REM 1) activar virtualenv (si se llamó venv)
+echo Activando entorno virtual...
 call venv\Scripts\activate
 
-REM 2) limpiar builds previos
+if %errorlevel% neq 0 (
+    echo NO se pudo activar el entorno virtual.
+    echo Asegúrate de haber creado el venv dentro de backend\
+    pause
+    exit /b 1
+)
+
+echo Instalando dependencias necesarias...
+pip install --upgrade pip
+pip install flask requests
+
+REM =======================================================
+REM Limpiar builds previos
+REM =======================================================
+echo Limpiando carpetas build/ y dist/ previas...
 if exist build rd /s /q build
 if exist dist rd /s /q dist
 
-REM 3) ejecutar pyinstaller
+REM =======================================================
+REM Ejecutar PyInstaller
+REM ===========================================
+echo Compilando backend con PyInstaller...
+
 pyinstaller --noconfirm --onefile ^
+    --hidden-import=requests ^
+    --hidden-import=core.pipeline ^
+    --hidden-import=core.glossary ^
+    --hidden-import=core.normalizer ^
+    --hidden-import=core.protector ^
     --add-data "glossary.json;." ^
     --add-data "config.json;." ^
     --add-data "core;core" ^
     app.py
 
-
 IF %ERRORLEVEL% NEQ 0 (
-    echo PyInstaller falló. Revisa el log.
+    echo =======================================================
+    echo   ❌ PyInstaller FALLO - revisa el error de arriba
+    echo =======================================================
     pause
     exit /b 1
 )
 
-echo Backend compilado. EXE en: dist\app.exe
+echo =======================================================
+echo   ✔ Backend compilado correctamente
+echo   ✔ Archivo final: dist\app.exe
+echo =======================================================
 pause
