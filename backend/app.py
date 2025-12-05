@@ -66,7 +66,8 @@ def detect_language_simple(text: str) -> str:
 
     # Count common words
     english_common = ["the", "and", "is", "patient", "dr", "mg", "ml", "iv", "bp", "check-up", "test"]
-    spanish_common = ["el", "la", "y", "es", "paciente", "mg", "ml", "intravenosa", "presión", "revisión", "prueba"]
+    spanish_common = ["el", "la", "y", "es", "paciente", "mg", "ml", "intravenosa", "presión", "revisión", 
+        "prueba"]
 
     english_hits = sum(1 for w in english_common if re.search(r"\b" + re.escape(w) + r"\b", text_lower))
     spanish_hits = sum(1 for w in spanish_common if re.search(r"\b" + re.escape(w) + r"\b", text_lower))
@@ -104,7 +105,8 @@ def load_glossary() -> list:
             if isinstance(raw, dict):
                 for k, v in raw.items():
                     # Try to infer fields
-                    term_es = v.get("es") or v.get("term_es") or (k if bool(re.search(r"[áéíóúñ]|[a-záéíóúñ]+", k, re.I)) else None)
+                    term_es = v.get("es") or v.get("term_es") or (k if bool(re.search(r"[áéíóúñ]|[a-záéíóúñ]+",
+                        k, re.I)) else None)
                     term_en = v.get("en") or v.get("term_en") or None
                     acronym = None
                     # if key looks like an acronym (all letters upper and short) use that
@@ -141,11 +143,14 @@ for entry in GLOSSARY:
     # order: match longer phrases first (to avoid partial matches)
     # compile patterns case-insensitive, unicode-aware
     if entry.get("term_es"):
-        _glossary_patterns.append( (len(entry["term_es"]), re.compile(r"\b" + re.escape(entry["term_es"]) + r"\b", flags=re.IGNORECASE|re.UNICODE), "es", entry) )
+        _glossary_patterns.append( (len(entry["term_es"]), re.compile(r"\b" + re.escape(entry["term_es"]) + 
+            r"\b", flags=re.IGNORECASE|re.UNICODE), "es", entry) )
     if entry.get("term_en"):
-        _glossary_patterns.append( (len(entry["term_en"]), re.compile(r"\b" + re.escape(entry["term_en"]) + r"\b", flags=re.IGNORECASE|re.UNICODE), "en", entry) )
+        _glossary_patterns.append( (len(entry["term_en"]), re.compile(r"\b" + re.escape(entry["term_en"]) + 
+        r"\b", flags=re.IGNORECASE|re.UNICODE), "en", entry) )
     if entry.get("acronym"):
-        _glossary_patterns.append( (len(entry["acronym"]), re.compile(r"\b" + re.escape(entry["acronym"]) + r"\b", flags=re.IGNORECASE|re.UNICODE), "acronym", entry) )
+        _glossary_patterns.append( (len(entry["acronym"]), re.compile(r"\b" + re.escape(entry["acronym"]) + 
+        r"\b", flags=re.IGNORECASE|re.UNICODE), "acronym", entry) )
 
 # sort descending by length so longest matches are applied first
 _glossary_patterns.sort(key=lambda x: x[0], reverse=True)
