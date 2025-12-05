@@ -1,35 +1,35 @@
-// main.js — versión final integrada con backend.exe
+// main.js
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
 const { spawn } = require("child_process");
 
 let backendProcess = null;
 
+function getBackendPath() {
+
+    // --- Modo producción (instalador) ---
+    const prodPath = path.join(process.resourcesPath, "backend", "app.exe");
+    if (require("fs").existsSync(prodPath)) {
+        console.log("Usando backend PRODUCCIÓN:", prodPath);
+        return prodPath;
+    }
+
+    // --- Modo desarrollo ---
+    const devPath = path.join(__dirname, "backend", "app.exe");
+    console.log("Usando backend DESARROLLO:", devPath);
+    return devPath;
+}
+
 function startBackend() {
-
-    const isDev = !app.isPackaged;
-
-    // Ruta del backend.exe en DEV
-    const backendDevPath = path.join(__dirname, "backend", "app.exe");
-
-    // Ruta del backend.exe dentro del instalador (resources/)
-    const backendProdPath = path.join(process.resourcesPath, "backend", "app.exe");
-
-    const backendPath = isDev ? backendDevPath : backendProdPath;
-
-    console.log("Iniciando backend desde:", backendPath);
+    const backendPath = getBackendPath();
 
     backendProcess = spawn(backendPath, [], {
         detached: false,
         stdio: "ignore"
     });
 
-    backendProcess.on("error", (err) => {
+    backendProcess.on("error", err => {
         console.error("Error al iniciar backend:", err);
-    });
-
-    backendProcess.on("exit", (code) => {
-        console.log("Backend finalizó con código:", code);
     });
 }
 
@@ -49,7 +49,7 @@ function createWindow() {
         }
     });
 
-    win.loadFile(path.join(__dirname, "public", "index.html"));
+    win.loadFile("public/index.html");
 
     win.on("closed", () => stopBackend());
 }
